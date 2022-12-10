@@ -1,10 +1,12 @@
 package Ventanas;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ventanaPrincipal {
+public class ventanaPrincipal extends JFrame {
+
     public JPanel contenedorPrincipal;
     private JButton Proveedores;
     private JButton Piezas;
@@ -22,10 +24,8 @@ public class ventanaPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Menu_Proveedores prov = new Menu_Proveedores();
-
-                //contenedorPrincipal.add();
-
+                Menu_Proveedores proveedores = new Menu_Proveedores();
+                proveedores.setVisible(true);
 
             }
         });

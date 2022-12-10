@@ -2,7 +2,7 @@ package Ventanas;
 
 import javax.swing.*;
 
-public class Menu_Piezas {
+public class Menu_Piezas extends JFrame{
     private JPanel Contenedor_Principal;
     private JButton button1;
     private JButton button2;
