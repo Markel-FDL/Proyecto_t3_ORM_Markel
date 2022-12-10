@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="proyecto_t3@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.43">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.45">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -999,22 +999,22 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8_general_ci</CollationName>
     </table>
     <column id="292" parent="288" name="piezas_codigo">
-      <DataType>varchar(6)|0s</DataType>
+      <DasType>varchar(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="293" parent="288" name="proyectos_codigo">
-      <DataType>varchar(6)|0s</DataType>
+      <DasType>varchar(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="294" parent="288" name="proveedores_codigo">
-      <DataType>varchar(6)|0s</DataType>
+      <DasType>varchar(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="295" parent="288" name="cantidad">
-      <DataType>float|0s</DataType>
+      <DasType>float|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="296" parent="288" name="fk_gestion_piezas">
@@ -1066,22 +1066,22 @@ piezas_codigo</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="304" parent="289" name="codigo">
-      <DataType>varchar(6)|0s</DataType>
+      <DasType>varchar(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="305" parent="289" name="nombre">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="306" parent="289" name="precio">
-      <DataType>float|0s</DataType>
+      <DasType>float|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="307" parent="289" name="descripcion">
-      <DataType>text|0s</DataType>
+      <DasType>text|0s</DasType>
       <Position>4</Position>
     </column>
     <index id="308" parent="289" name="PRIMARY">
@@ -1095,22 +1095,22 @@ piezas_codigo</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="310" parent="290" name="codigo">
-      <DataType>varchar(6)|0s</DataType>
+      <DasType>varchar(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="311" parent="290" name="nombre">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="312" parent="290" name="apellidos">
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="313" parent="290" name="direccion">
-      <DataType>varchar(40)|0s</DataType>
+      <DasType>varchar(40)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
@@ -1125,17 +1125,17 @@ piezas_codigo</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="316" parent="291" name="codigo">
-      <DataType>varchar(6)|0s</DataType>
+      <DasType>varchar(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="317" parent="291" name="nombre">
-      <DataType>varchar(40)|0s</DataType>
+      <DasType>varchar(40)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="318" parent="291" name="ciudad">
-      <DataType>varchar(40)|0s</DataType>
+      <DasType>varchar(40)|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="319" parent="291" name="PRIMARY">
