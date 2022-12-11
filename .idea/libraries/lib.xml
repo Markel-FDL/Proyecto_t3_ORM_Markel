@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/jaxb-api-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/txw2-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/hibernate-commons-annotations-5.1.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/dom4j-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/antlr-2.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/jboss-logging-3.3.2.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/classmate-1.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/javassist-3.24.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/byte-buddy-1.10.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/FastInfoset-1.2.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/javax.activation-api-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/hibernate-core-5.4.11.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/javax.persistence-api-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/jaxb-runtime-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/istack-commons-runtime-3.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/stax-ex-1.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Proyecto_T3_ORM_Markel/lib/jandex-2.1.1.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
