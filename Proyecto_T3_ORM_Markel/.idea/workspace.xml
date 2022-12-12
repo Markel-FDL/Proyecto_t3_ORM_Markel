@@ -37,7 +37,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "222",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/mafe1/Desktop/Gestion-Proyectos-Hibernate-main",
+    "last_opened_file_path": "C:/Users/mafe1/Desktop/Proyecto_t3_ORM_Markel/Proyecto_T3_ORM_Markel/src/com/company",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,6 +56,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mafe1\Desktop\Proyecto_t3_ORM_Markel\Proyecto_T3_ORM_Markel\src\com\company" />
       <recent name="C:\Users\mafe1\Desktop\Proyecto_t3_ORM_Markel\Proyecto_T3_ORM_Markel\src\Ventanas" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -115,6 +116,7 @@
       <workItem from="1670507249365" duration="706000" />
       <workItem from="1670575754110" duration="1535000" />
       <workItem from="1670661062508" duration="20915000" />
+      <workItem from="1670854192890" duration="1397000" />
     </task>
     <servers />
   </component>
