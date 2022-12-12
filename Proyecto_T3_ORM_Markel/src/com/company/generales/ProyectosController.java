@@ -1,5 +1,5 @@
 package com.company.generales;
-
+/*
 import controller.hibernate.Utils;
 import model.ProyectosEntity;
 
@@ -114,3 +114,4 @@ public class ProyectosController {
 
 
 }
+*/

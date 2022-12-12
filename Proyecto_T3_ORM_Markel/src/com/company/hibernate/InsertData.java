@@ -1,5 +1,5 @@
 package com.company.hibernate;
-
+/*
 import model.GestionEntity;
 import model.PiezasEntity;
 import model.ProveedoresEntity;
@@ -199,3 +199,4 @@ public class InsertData {
 
     }
 }
+*/

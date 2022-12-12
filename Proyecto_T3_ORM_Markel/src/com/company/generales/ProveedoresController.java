@@ -1,5 +1,5 @@
 package com.company.generales;
-
+/*
 import controller.hibernate.Utils;
 import model.PiezasEntity;
 import model.ProveedoresEntity;
@@ -133,3 +133,4 @@ public class ProveedoresController {
     }
 
 }
+*/

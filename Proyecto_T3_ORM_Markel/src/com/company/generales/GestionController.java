@@ -1,10 +1,17 @@
 package com.company.generales;
 
+import com.company.GestionEntity;
+import com.company.PiezasEntity;
+import com.company.ProveedoresEntity;
+import com.company.ProyectosEntity;
+import com.company.hibernate.Utils;
+//<editor-fold desc="Description">
 import controller.hibernate.Utils;
 import model.GestionEntity;
 import model.PiezasEntity;
 import model.ProveedoresEntity;
 import model.ProyectosEntity;
+//</editor-fold>
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -24,7 +31,7 @@ public class GestionController {
         ArrayList<PiezasEntity> piezas = new ArrayList<>();
         for (Object object : objects) {
             GestionEntity gestionEntity = (GestionEntity) object;
-            PiezasEntity pieza = PiezasController.getPieza(gestionEntity.getIdpieza().getId());
+            PiezasEntity pieza = PiezasController.getPieza(gestionEntity.getPiezasCodigo().getId());
             piezas.add(pieza);
         }
         return piezas;
@@ -269,4 +276,3 @@ public class GestionController {
         return null;
     }
 }
-
