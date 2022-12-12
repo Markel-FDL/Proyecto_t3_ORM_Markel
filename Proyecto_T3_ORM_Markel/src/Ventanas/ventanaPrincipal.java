@@ -27,11 +27,7 @@ public class ventanaPrincipal extends JFrame {
 
         Proveedores.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-
-                Ir_proveedores();
-
-            }
+            public void actionPerformed(ActionEvent e) {Ir_proveedores();}
         });
 
         Piezas.addActionListener(new ActionListener() {
