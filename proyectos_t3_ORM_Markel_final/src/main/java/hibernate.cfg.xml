@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/proyecto_t3</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">root</property>
+    <mapping resource="GestionEntity.hbm.xml"/>
+    <mapping class="com.mycompany.proyectos_t3_orm_markel_final.GestionEntity"/>
+    <mapping resource="PiezasEntity.hbm.xml"/>
+    <mapping class="com.mycompany.proyectos_t3_orm_markel_final.PiezasEntity"/>
+    <mapping resource="ProveedoresEntity.hbm.xml"/>
+    <mapping class="com.mycompany.proyectos_t3_orm_markel_final.ProveedoresEntity"/>
+    <mapping resource="ProyectosEntity.hbm.xml"/>
+    <mapping class="com.mycompany.proyectos_t3_orm_markel_final.ProyectosEntity"/>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

@@ -10,6 +10,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -35,16 +42,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "JPA.DatabaseSchemaImportDialog": "859e5fe2-5d2b-435c-a0e1-25ef413f931f",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/9fdam05/Desktop/Proyecto_t3_ORM_Markel/proyectos_t3_ORM_Markel_final/pom.xml",
+    "last_opened_file_path": "C:/Users/mafe1/Desktop/Proyecto_t3_ORM_Markel/proyectos_t3_ORM_Markel_final",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   },
@@ -56,6 +68,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="com.mycompany.proyectos_t3_orm_markel_final" />
       <recent name="" />
     </key>
   </component>
@@ -68,6 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670874535844</updated>
       <workItem from="1670874536950" duration="845000" />
+      <workItem from="1670934218799" duration="999000" />
     </task>
     <servers />
   </component>
