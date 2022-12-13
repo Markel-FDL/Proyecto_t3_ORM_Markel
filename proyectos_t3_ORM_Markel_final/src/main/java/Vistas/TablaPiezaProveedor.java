@@ -4,6 +4,8 @@
  */
 package Vistas;
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;

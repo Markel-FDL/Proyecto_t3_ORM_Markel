@@ -5,6 +5,9 @@
 package Vistas;
 
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+import com.mycompany.proyectos_t3_orm_markel_final.PiezasEntity;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -13,7 +16,7 @@ import java.util.ArrayList;
  */
 public class GestionPiezas extends javax.swing.JFrame {
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<Piezas> lpiezas;
+    static ArrayList<PiezasEntity> lpiezas;
     static int contador;
 
     /**
@@ -34,25 +37,25 @@ public class GestionPiezas extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        binsertar = new javax.swing.JButton();
-        bmodificar = new javax.swing.JButton();
-        blimpiar = new javax.swing.JButton();
-        beliminar = new javax.swing.JButton();
+        insertarBoton = new javax.swing.JButton();
+        modificarBoton = new javax.swing.JButton();
+        limpiarBoton = new javax.swing.JButton();
+        eliminarBoton = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        nomPieza = new javax.swing.JTextField();
+        nombrePie = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        precioPieza = new javax.swing.JSpinner();
+        precioPie = new javax.swing.JSpinner();
         jScrollPane2 = new javax.swing.JScrollPane();
         descPieza = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
-        codPieza = new javax.swing.JTextField();
+        codigoPie = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        banterior = new javax.swing.JButton();
-        bsiguiente = new javax.swing.JButton();
-        bprimero = new javax.swing.JButton();
-        bultimo = new javax.swing.JButton();
-        numero = new javax.swing.JLabel();
+        anteriorBoton = new javax.swing.JButton();
+        siguienteBoton = new javax.swing.JButton();
+        primeroBoton = new javax.swing.JButton();
+        ultimoBoton = new javax.swing.JButton();
+        numeroPie = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         datoDescripcion = new javax.swing.JTextArea();
         jLabel14 = new javax.swing.JLabel();
@@ -60,8 +63,8 @@ public class GestionPiezas extends javax.swing.JFrame {
         datoPrecio = new javax.swing.JSpinner();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        datosNombre = new javax.swing.JTextField();
-        datosCodigo = new javax.swing.JTextField();
+        datosNombrePie = new javax.swing.JTextField();
+        datosCodigoPie = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -71,57 +74,57 @@ public class GestionPiezas extends javax.swing.JFrame {
             }
         });
 
-        binsertar.setText("Insertar");
-        binsertar.addActionListener(new java.awt.event.ActionListener() {
+        insertarBoton.setText("Insertar");
+        insertarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                binsertarActionPerformed(evt);
+                insertarBotonActionPerformed(evt);
             }
         });
 
-        bmodificar.setText("Modificar");
-        bmodificar.addActionListener(new java.awt.event.ActionListener() {
+        modificarBoton.setText("Modificar");
+        modificarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bmodificarActionPerformed(evt);
+                modificarBotonActionPerformed(evt);
             }
         });
 
-        blimpiar.setText("Limpiar");
-        blimpiar.addActionListener(new java.awt.event.ActionListener() {
+        limpiarBoton.setText("Limpiar");
+        limpiarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blimpiarActionPerformed(evt);
+                limpiarBotonActionPerformed(evt);
             }
         });
 
-        beliminar.setText("Eliminar");
-        beliminar.addActionListener(new java.awt.event.ActionListener() {
+        eliminarBoton.setText("Eliminar");
+        eliminarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beliminarActionPerformed(evt);
+                eliminarBotonActionPerformed(evt);
             }
         });
 
-        jLabel10.setText("Codigo de la pieza");
+        jLabel10.setText("Codigo de la pieza: ");
 
-        jLabel11.setText("Nombre");
+        jLabel11.setText("Nombre: ");
 
-        nomPieza.addActionListener(new java.awt.event.ActionListener() {
+        nombrePie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomPiezaActionPerformed(evt);
+                nombrePieActionPerformed(evt);
             }
         });
 
-        jLabel12.setText("Precio");
+        jLabel12.setText("Precio: ");
 
-        precioPieza.setModel(new javax.swing.SpinnerNumberModel(0.0d, null, null, 0.10000000149011612d));
+        precioPie.setModel(new javax.swing.SpinnerNumberModel(0.0d, null, null, 0.10000000149011612d));
 
         descPieza.setColumns(20);
         descPieza.setRows(5);
         jScrollPane2.setViewportView(descPieza);
 
-        jLabel13.setText("Descripcion");
+        jLabel13.setText("Descripcion: ");
 
-        codPieza.addActionListener(new java.awt.event.ActionListener() {
+        codigoPie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codPiezaActionPerformed(evt);
+                codigoPieActionPerformed(evt);
             }
         });
 
@@ -133,39 +136,37 @@ public class GestionPiezas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 23, Short.MAX_VALUE)
-                        .addComponent(blimpiar)
-                        .addGap(18, 18, 18)
-                        .addComponent(binsertar)
-                        .addGap(18, 18, 18)
-                        .addComponent(bmodificar)
-                        .addGap(18, 18, 18)
-                        .addComponent(beliminar)
-                        .addGap(11, 11, 11))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel13))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(precioPie, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel13))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane2))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(92, 92, 92)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(precioPieza, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addComponent(nomPieza)))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(57, 57, 57)
-                                .addComponent(codPieza)))
-                        .addGap(23, 23, 23)))
-                .addContainerGap())
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                                    .addComponent(nombrePie))))
+                        .addGap(87, 87, 87))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(insertarBoton, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(limpiarBoton, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(modificarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(eliminarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(108, 108, 108))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(codigoPie, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,90 +174,94 @@ public class GestionPiezas extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(codPieza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigoPie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomPieza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombrePie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(precioPieza, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
+                    .addComponent(jLabel12)
+                    .addComponent(precioPie, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(eliminarBoton)
+                            .addComponent(limpiarBoton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel13)
+                        .addGap(73, 73, 73)))
+                .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bmodificar)
-                    .addComponent(beliminar)
-                    .addComponent(binsertar)
-                    .addComponent(blimpiar))
-                .addGap(32, 32, 32))
+                    .addComponent(insertarBoton)
+                    .addComponent(modificarBoton))
+                .addGap(22, 22, 22))
         );
 
         jTabbedPane1.addTab("Gestion de piezas", jPanel1);
 
-        banterior.setText("<<");
-        banterior.addActionListener(new java.awt.event.ActionListener() {
+        anteriorBoton.setText("<<");
+        anteriorBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                banteriorActionPerformed(evt);
+                anteriorBotonActionPerformed(evt);
             }
         });
 
-        bsiguiente.setText(">>");
-        bsiguiente.addActionListener(new java.awt.event.ActionListener() {
+        siguienteBoton.setText(">>");
+        siguienteBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bsiguienteActionPerformed(evt);
+                siguienteBotonActionPerformed(evt);
             }
         });
 
-        bprimero.setText("|<<");
-        bprimero.addActionListener(new java.awt.event.ActionListener() {
+        primeroBoton.setText("|<<");
+        primeroBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bprimeroActionPerformed(evt);
+                primeroBotonActionPerformed(evt);
             }
         });
 
-        bultimo.setText(">>|");
-        bultimo.addActionListener(new java.awt.event.ActionListener() {
+        ultimoBoton.setText(">>|");
+        ultimoBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bultimoActionPerformed(evt);
+                ultimoBotonActionPerformed(evt);
             }
         });
 
-        numero.setText("1/2");
+        numeroPie.setText("1/2");
 
         datoDescripcion.setEditable(false);
         datoDescripcion.setColumns(20);
         datoDescripcion.setRows(5);
         jScrollPane3.setViewportView(datoDescripcion);
 
-        jLabel14.setText("Descripcion");
+        jLabel14.setText("Descripcion: ");
 
         jLabel15.setText("Precio");
 
         datoPrecio.setModel(new javax.swing.SpinnerNumberModel(0.0d, null, null, 0.10000000149011612d));
         datoPrecio.setEnabled(false);
 
-        jLabel16.setText("Nombre");
+        jLabel16.setText("Nombre: ");
 
-        jLabel17.setText("Codigo de la pieza");
+        jLabel17.setText("Codigo de la pieza: ");
 
-        datosNombre.setEditable(false);
-        datosNombre.addActionListener(new java.awt.event.ActionListener() {
+        datosNombrePie.setEditable(false);
+        datosNombrePie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                datosNombreActionPerformed(evt);
+                datosNombrePieActionPerformed(evt);
             }
         });
 
-        datosCodigo.setEditable(false);
-        datosCodigo.addActionListener(new java.awt.event.ActionListener() {
+        datosCodigoPie.setEditable(false);
+        datosCodigoPie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                datosCodigoActionPerformed(evt);
+                datosCodigoPieActionPerformed(evt);
             }
         });
 
@@ -264,77 +269,79 @@ public class GestionPiezas extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(numeroPie)
+                .addGap(182, 182, 182))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(primeroBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(anteriorBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(siguienteBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ultimoBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(116, 116, 116))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(160, 160, 160)
-                                .addComponent(datoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel17))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel14)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel15))
+                            .addComponent(jLabel16))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jScrollPane3))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(datosCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(datosNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(41, 41, 41))))))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(bprimero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(banterior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(bsiguiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(bultimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(26, 26, 26))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(numero)
-                .addGap(182, 182, 182))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel15)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(datoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(datosNombrePie, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane3)
+                                .addContainerGap())))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(datosCodigoPie, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(datosCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(datosCodigoPie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(datosNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(datosNombrePie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(datoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(8, 8, 8)
-                .addComponent(numero)
-                .addGap(18, 18, 18)
+                        .addGap(12, 12, 12)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel14)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(numeroPie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bsiguiente)
-                    .addComponent(bultimo)
-                    .addComponent(banterior)
-                    .addComponent(bprimero))
+                    .addComponent(primeroBoton)
+                    .addComponent(ultimoBoton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(siguienteBoton)
+                    .addComponent(anteriorBoton))
                 .addGap(18, 18, 18))
         );
 
@@ -359,12 +366,12 @@ public class GestionPiezas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void binsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binsertarActionPerformed
-        double precio = (double) precioPieza.getValue();
-        if (!codPieza.getText().equals("") && !nomPieza.getText().equals("") && !descPieza.getText().equals("") && (precio > 0.0)) {
-            Piezas p = new Piezas();
-            p.setCodigo(codPieza.getText().toUpperCase());
-            p.setNombre(nomPieza.getText());
+    private void insertarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertarBotonActionPerformed
+        double precio = (double) precioPie.getValue();
+        if (!codigoPie.getText().equals("") && !nombrePie.getText().equals("") && !descPieza.getText().equals("") && (precio > 0.0)) {
+            PiezasEntity p = new PiezasEntity();
+            p.setCodigo(codigoPie.getText().toUpperCase());
+            p.setNombre(nombrePie.getText());
             p.setDescripcion(descPieza.getText());
             p.setPrecio(precio);
             switch (operaciones.anadirPieza(p)) {
@@ -376,14 +383,14 @@ public class GestionPiezas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Hay valores vacios o incorrectos", "Parametros faltantes", JOptionPane.ERROR_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_binsertarActionPerformed
+    }//GEN-LAST:event_insertarBotonActionPerformed
 
-    private void bmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmodificarActionPerformed
-        Piezas p = new Piezas();
-        if (!codPieza.getText().equals("")) {
-            p.setCodigo(codPieza.getText());
-            p.setNombre(nomPieza.getText());
-            p.setPrecio((Double) precioPieza.getValue());
+    private void modificarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarBotonActionPerformed
+        PiezasEntity p = new PiezasEntity();
+        if (!codigoPie.getText().equals("")) {
+            p.setCodigo(codigoPie.getText());
+            p.setNombre(nombrePie.getText());
+            p.setPrecio((Double) precioPie.getValue());
             p.setDescripcion(descPieza.getText());
             switch (operaciones.actualizarPieza(p)) {
                 case 0 -> JOptionPane.showMessageDialog(this, "Se ha actualizado la pieza correctamente");
@@ -397,18 +404,18 @@ public class GestionPiezas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder modificar una pieza", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_bmodificarActionPerformed
+    }//GEN-LAST:event_modificarBotonActionPerformed
 
-    private void blimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blimpiarActionPerformed
+    private void limpiarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarBotonActionPerformed
         limpiarDatos();
-    }//GEN-LAST:event_blimpiarActionPerformed
+    }//GEN-LAST:event_limpiarBotonActionPerformed
 
-    private void beliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beliminarActionPerformed
-        Piezas p = new Piezas();
-        if (!codPieza.getText().equals("")) {
+    private void eliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBotonActionPerformed
+        PiezasEntity p = new PiezasEntity();
+        if (!codigoPie.getText().equals("")) {
             int opcion = JOptionPane.showConfirmDialog(this, "¿Estas seguro de que quieres eliminar la pieza?", "Confirmacion borrado", JOptionPane.YES_NO_OPTION);
             if (opcion == 0) {
-                p.setCodigo(codPieza.getText());
+                p.setCodigo(codigoPie.getText());
                 switch (operaciones.eliminarPieza(p)) {
                     case 0 -> JOptionPane.showMessageDialog(this, "Se ha eliminado la pieza correctamente");
                     case 1 ->
@@ -424,47 +431,47 @@ public class GestionPiezas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder eliminar una pieza", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_beliminarActionPerformed
+    }//GEN-LAST:event_eliminarBotonActionPerformed
 
-    private void banteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_banteriorActionPerformed
+    private void anteriorBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorBotonActionPerformed
         if (contador > 0) {
             contador--;
             cargarProveedor(contador);
         }
-    }//GEN-LAST:event_banteriorActionPerformed
+    }//GEN-LAST:event_anteriorBotonActionPerformed
 
-    private void bsiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsiguienteActionPerformed
+    private void siguienteBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteBotonActionPerformed
         if (contador < (lpiezas.size() - 1)) {
             contador++;
             cargarProveedor(contador);
         }
-    }//GEN-LAST:event_bsiguienteActionPerformed
+    }//GEN-LAST:event_siguienteBotonActionPerformed
 
-    private void bprimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bprimeroActionPerformed
+    private void primeroBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primeroBotonActionPerformed
         contador = 0;
         cargarProveedor(contador);
-    }//GEN-LAST:event_bprimeroActionPerformed
+    }//GEN-LAST:event_primeroBotonActionPerformed
 
-    private void bultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bultimoActionPerformed
+    private void ultimoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultimoBotonActionPerformed
         contador = lpiezas.size() - 1;
         cargarProveedor(contador);
-    }//GEN-LAST:event_bultimoActionPerformed
+    }//GEN-LAST:event_ultimoBotonActionPerformed
 
-    private void nomPiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomPiezaActionPerformed
+    private void nombrePieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrePieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nomPiezaActionPerformed
+    }//GEN-LAST:event_nombrePieActionPerformed
 
-    private void codPiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codPiezaActionPerformed
+    private void codigoPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoPieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_codPiezaActionPerformed
+    }//GEN-LAST:event_codigoPieActionPerformed
 
-    private void datosNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosNombreActionPerformed
+    private void datosNombrePieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosNombrePieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_datosNombreActionPerformed
+    }//GEN-LAST:event_datosNombrePieActionPerformed
 
-    private void datosCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosCodigoActionPerformed
+    private void datosCodigoPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosCodigoPieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_datosCodigoActionPerformed
+    }//GEN-LAST:event_datosCodigoPieActionPerformed
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
         cargarTab();
@@ -477,18 +484,18 @@ public class GestionPiezas extends javax.swing.JFrame {
     }
 
     private void cargarProveedor(int contador) {
-        numero.setText(contador + 1 + "/" + lpiezas.size());
-        datosCodigo.setText(lpiezas.get(contador).getCodigo());
-        datosNombre.setText(lpiezas.get(contador).getNombre());
+        numeroPie.setText(contador + 1 + "/" + lpiezas.size());
+        datosCodigoPie.setText(lpiezas.get(contador).getCodigo());
+        datosNombrePie.setText(lpiezas.get(contador).getNombre());
         datoPrecio.setValue(lpiezas.get(contador).getPrecio());
         datoDescripcion.setText(lpiezas.get(contador).getDescripcion());
     }
 
 
     private void limpiarDatos() {
-        codPieza.setText("");
-        nomPieza.setText("");
-        precioPieza.setValue(0.0);
+        codigoPie.setText("");
+        nombrePie.setText("");
+        precioPie.setValue(0.0);
         descPieza.setText("");
     }
 
@@ -535,20 +542,15 @@ public class GestionPiezas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton banterior;
-    private javax.swing.JButton beliminar;
-    private javax.swing.JButton binsertar;
-    private javax.swing.JButton blimpiar;
-    private javax.swing.JButton bmodificar;
-    private javax.swing.JButton bprimero;
-    private javax.swing.JButton bsiguiente;
-    private javax.swing.JButton bultimo;
-    private javax.swing.JTextField codPieza;
+    private javax.swing.JButton anteriorBoton;
+    private javax.swing.JTextField codigoPie;
     private javax.swing.JTextArea datoDescripcion;
     private javax.swing.JSpinner datoPrecio;
-    private javax.swing.JTextField datosCodigo;
-    private javax.swing.JTextField datosNombre;
+    private javax.swing.JTextField datosCodigoPie;
+    private javax.swing.JTextField datosNombrePie;
     private javax.swing.JTextArea descPieza;
+    private javax.swing.JButton eliminarBoton;
+    private javax.swing.JButton insertarBoton;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -562,8 +564,13 @@ public class GestionPiezas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField nomPieza;
-    private javax.swing.JLabel numero;
-    private javax.swing.JSpinner precioPieza;
+    private javax.swing.JButton limpiarBoton;
+    private javax.swing.JButton modificarBoton;
+    private javax.swing.JTextField nombrePie;
+    private javax.swing.JLabel numeroPie;
+    private javax.swing.JSpinner precioPie;
+    private javax.swing.JButton primeroBoton;
+    private javax.swing.JButton siguienteBoton;
+    private javax.swing.JButton ultimoBoton;
     // End of variables declaration//GEN-END:variables
 }

@@ -56,19 +56,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
-                      <Component id="blimpiar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="binsertar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="bmodificar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="beliminar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -78,18 +67,31 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nomProveedor" linkSize="3" alignment="1" min="-2" pref="213" max="-2" attributes="0"/>
-                                  <Component id="apeProveedor" linkSize="3" alignment="1" min="-2" pref="213" max="-2" attributes="0"/>
-                                  <Component id="direcProveedor" linkSize="3" alignment="1" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="nombreProv" linkSize="3" alignment="1" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="apellidoProv" linkSize="3" alignment="1" min="-2" pref="213" max="-2" attributes="0"/>
+                                  <Component id="direccionProv" linkSize="3" alignment="1" min="-2" pref="213" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="codProveedor" min="-2" pref="160" max="-2" attributes="0"/>
+                              <Component id="codigoProv" min="-2" pref="157" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace pref="80" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="modificarBoton" max="32767" attributes="0"/>
+                          <Component id="limpiarBoton" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="insertarBoton" min="-2" max="-2" attributes="0"/>
+                          <Component id="eliminarBoton" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -99,29 +101,32 @@
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" linkSize="1" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="codProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="codigoProv" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nomProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nombreProv" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="apeProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="apellidoProv" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="direcProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="direccionProv" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="76" max="32767" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="bmodificar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="beliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="binsertar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="blimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="limpiarBoton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="insertarBoton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="modificarBoton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="eliminarBoton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
@@ -131,68 +136,68 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Codigo del proveedor"/>
+                <Property name="text" type="java.lang.String" value="Codigo del proveedor:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre"/>
+                <Property name="text" type="java.lang.String" value="Nombre: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Apellidos"/>
+                <Property name="text" type="java.lang.String" value="Apellidos: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Direccion"/>
+                <Property name="text" type="java.lang.String" value="Direccion: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="apeProveedor">
+            <Component class="javax.swing.JTextField" name="apellidoProv">
             </Component>
-            <Component class="javax.swing.JTextField" name="direcProveedor">
+            <Component class="javax.swing.JTextField" name="direccionProv">
             </Component>
-            <Component class="javax.swing.JTextField" name="nomProveedor">
+            <Component class="javax.swing.JTextField" name="nombreProv">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomProveedorActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreProvActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="binsertar">
+            <Component class="javax.swing.JButton" name="insertarBoton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Insertar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="binsertarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertarBotonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="bmodificar">
+            <Component class="javax.swing.JButton" name="modificarBoton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bmodificarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificarBotonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="blimpiar">
+            <Component class="javax.swing.JButton" name="limpiarBoton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limpiar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="blimpiarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiarBotonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="beliminar">
+            <Component class="javax.swing.JButton" name="eliminarBoton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="beliminarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarBotonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="codProveedor">
+            <Component class="javax.swing.JTextField" name="codigoProv">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codProveedorActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codigoProvActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -209,17 +214,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="34" max="32767" attributes="0"/>
-                      <Component id="bprimero" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="banterior" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="bsiguiente" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="bultimo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -252,6 +246,19 @@
                       </Group>
                       <EmptySpace pref="70" max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="bprimero" min="-2" max="-2" attributes="0"/>
+                          <Component id="banterior" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bsiguiente" min="-2" max="-2" attributes="0"/>
+                          <Component id="bultimo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -277,14 +284,17 @@
                           <Component id="datoDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="numeros" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bprimero" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bultimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="bsiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bultimo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="banterior" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bprimero" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>

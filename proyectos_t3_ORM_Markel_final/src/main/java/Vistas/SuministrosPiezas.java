@@ -5,6 +5,8 @@
 package Vistas;
 
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -33,15 +35,15 @@ public class SuministrosPiezas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        nombre = new javax.swing.JTextField();
-        precio = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        npiezasuministrada = new javax.swing.JTextField();
-        canttotalsuministrada = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        nproveedoressum = new javax.swing.JTextField();
+        jComboBoxPie = new javax.swing.JComboBox<>();
+        nombrePie = new javax.swing.JTextField();
+        precioPie = new javax.swing.JTextField();
+        numProv = new javax.swing.JLabel();
+        numproveedoresProv = new javax.swing.JLabel();
+        numpiezasPie = new javax.swing.JTextField();
+        totalPie = new javax.swing.JTextField();
+        totalLabel = new javax.swing.JLabel();
+        numproveedorProv = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         descripcion = new javax.swing.JTextArea();
 
@@ -52,35 +54,35 @@ public class SuministrosPiezas extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Pieza");
+        jLabel1.setText("Pieza: ");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxPie.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxPie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxPieActionPerformed(evt);
             }
         });
 
-        nombre.setEditable(false);
+        nombrePie.setEditable(false);
 
-        precio.setEditable(false);
+        precioPie.setEditable(false);
 
-        jLabel2.setText("Nº de proyectos");
+        numProv.setText("Numeno del proyectos: ");
 
-        jLabel3.setText("Nº proveedores que la suministra:");
+        numproveedoresProv.setText("Numero del proveedor suministradora: ");
 
-        npiezasuministrada.setEditable(false);
-        npiezasuministrada.addActionListener(new java.awt.event.ActionListener() {
+        numpiezasPie.setEditable(false);
+        numpiezasPie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                npiezasuministradaActionPerformed(evt);
+                numpiezasPieActionPerformed(evt);
             }
         });
 
-        canttotalsuministrada.setEditable(false);
+        totalPie.setEditable(false);
 
-        jLabel4.setText("Cantidad total suministrada:");
+        totalLabel.setText("Cantidad suministrada: ");
 
-        nproveedoressum.setEditable(false);
+        numproveedorProv.setEditable(false);
 
         descripcion.setEditable(false);
         descripcion.setColumns(20);
@@ -94,69 +96,69 @@ public class SuministrosPiezas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addComponent(numProv)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(npiezasuministrada, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(nproveedoressum, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(canttotalsuministrada, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addComponent(jComboBoxPie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(numpiezasPie, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numproveedoresProv)
+                    .addComponent(totalLabel)
+                    .addComponent(totalPie, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numproveedorProv, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(precio, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(nombrePie, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(precioPie, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxPie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombrePie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(precioPie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numProv))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(npiezasuministrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(numpiezasPie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nproveedoressum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(canttotalsuministrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(numproveedoresProv)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(numproveedorProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(totalLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(totalPie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addGap(20, 20, 20)
                         .addComponent(jScrollPane1)))
-                .addGap(45, 45, 45))
+                .addGap(27, 27, 27))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        Object[] obj = ldatos.get(jComboBox1.getSelectedIndex());
-        nombre.setText(obj[1].toString());
-        precio.setText(obj[2].toString());
+    private void jComboBoxPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPieActionPerformed
+        Object[] obj = ldatos.get(jComboBoxPie.getSelectedIndex());
+        nombrePie.setText(obj[1].toString());
+        precioPie.setText(obj[2].toString());
         descripcion.setText(obj[3].toString());
-        canttotalsuministrada.setText(obj[4].toString());
-        npiezasuministrada.setText(obj[5].toString());
-        nproveedoressum.setText(obj[6].toString());
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        totalPie.setText(obj[4].toString());
+        numpiezasPie.setText(obj[5].toString());
+        numproveedorProv.setText(obj[6].toString());
+    }//GEN-LAST:event_jComboBoxPieActionPerformed
 
-    private void npiezasuministradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_npiezasuministradaActionPerformed
+    private void numpiezasPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numpiezasPieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_npiezasuministradaActionPerformed
+    }//GEN-LAST:event_numpiezasPieActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         ldatos = operaciones.listarDatosSuministrosPiezas();
@@ -167,7 +169,7 @@ public class SuministrosPiezas extends javax.swing.JFrame {
         }
 
         DefaultComboBoxModel defaultComboBoxModel = new DefaultComboBoxModel(codigos);
-        jComboBox1.setModel(defaultComboBoxModel);
+        jComboBoxPie.setModel(defaultComboBoxModel);
 
     }//GEN-LAST:event_formWindowOpened
 
@@ -238,17 +240,17 @@ public class SuministrosPiezas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField canttotalsuministrada;
     private javax.swing.JTextArea descripcion;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBoxPie;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JTextField npiezasuministrada;
-    private javax.swing.JTextField nproveedoressum;
-    private javax.swing.JTextField precio;
+    private javax.swing.JTextField nombrePie;
+    private javax.swing.JLabel numProv;
+    private javax.swing.JTextField numpiezasPie;
+    private javax.swing.JTextField numproveedorProv;
+    private javax.swing.JLabel numproveedoresProv;
+    private javax.swing.JTextField precioPie;
+    private javax.swing.JLabel totalLabel;
+    private javax.swing.JTextField totalPie;
     // End of variables declaration//GEN-END:variables
 }

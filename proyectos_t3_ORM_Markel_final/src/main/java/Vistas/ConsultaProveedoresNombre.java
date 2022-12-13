@@ -5,6 +5,9 @@
 package Vistas;
 
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+import com.mycompany.proyectos_t3_orm_markel_final.ProveedoresEntity;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
@@ -16,7 +19,7 @@ import java.util.ArrayList;
 public class ConsultaProveedoresNombre extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<Proveedores> lproveedores;
+    static ArrayList<ProveedoresEntity> lproveedores;
     static final String[] col = new String[]{"Codigo", "Nombre", "Apellidos", "Direccion"};
 
     /**
@@ -36,19 +39,19 @@ public class ConsultaProveedoresNombre extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        bbuscar = new javax.swing.JButton();
+        buscarBoton = new javax.swing.JButton();
         textoBusqueda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaResultados = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Nombre");
+        jLabel1.setText("Nombre: ");
 
-        bbuscar.setText("Buscar");
-        bbuscar.addActionListener(new java.awt.event.ActionListener() {
+        buscarBoton.setText("Buscar");
+        buscarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bbuscarActionPerformed(evt);
+                buscarBotonActionPerformed(evt);
             }
         });
 
@@ -72,9 +75,9 @@ public class ConsultaProveedoresNombre extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(textoBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                        .addComponent(textoBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bbuscar))
+                        .addComponent(buscarBoton))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)))
@@ -86,7 +89,7 @@ public class ConsultaProveedoresNombre extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(bbuscar)
+                    .addComponent(buscarBoton)
                     .addComponent(textoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -96,14 +99,14 @@ public class ConsultaProveedoresNombre extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbuscarActionPerformed
+    private void buscarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBotonActionPerformed
         if (!textoBusqueda.getText().trim().equals("")) {
-            ArrayList<Proveedores> temp = operaciones.listarProveedorFiltro("nombre", textoBusqueda.getText());
+            ArrayList<ProveedoresEntity> temp = operaciones.listarProveedorFiltro("nombre", textoBusqueda.getText());
             if (temp.size() > 0) {
                 lproveedores = temp;
 
                 DefaultTableModel model = new DefaultTableModel(col,0);
-                for (Proveedores lproveedor : lproveedores) {
+                for (ProveedoresEntity lproveedor : lproveedores) {
                     String[] datos = new String[]{lproveedor.getCodigo(), lproveedor.getNombre(), lproveedor.getApellidos(), lproveedor.getDireccion()};
                     model.addRow(datos);
                 }
@@ -115,7 +118,7 @@ public class ConsultaProveedoresNombre extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Debes de introducir un codigo para poder filtrar proveedores", "Operacion cancelada", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_bbuscarActionPerformed
+    }//GEN-LAST:event_buscarBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,7 +159,7 @@ public class ConsultaProveedoresNombre extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bbuscar;
+    private javax.swing.JButton buscarBoton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaResultados;

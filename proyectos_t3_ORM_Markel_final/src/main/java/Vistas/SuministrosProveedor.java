@@ -5,6 +5,8 @@
 package Vistas;
 
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -33,15 +35,15 @@ public class SuministrosProveedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        nombre = new javax.swing.JTextField();
-        apellido = new javax.swing.JTextField();
-        direccion = new javax.swing.JTextField();
+        ProvLabel = new javax.swing.JLabel();
+        jComboBoxProv = new javax.swing.JComboBox<>();
+        nombreProv = new javax.swing.JTextField();
+        apellidoProv = new javax.swing.JTextField();
+        direccionProv = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        npiezassuministradas = new javax.swing.JTextField();
-        nproyectos = new javax.swing.JTextField();
+        numpiezasProv = new javax.swing.JTextField();
+        numProv = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -50,33 +52,43 @@ public class SuministrosProveedor extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Proveedor");
+        ProvLabel.setText("Proveedor: ");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxProv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxProvActionPerformed(evt);
             }
         });
 
-        nombre.setEditable(false);
-
-        apellido.setEditable(false);
-
-        direccion.setEditable(false);
-        direccion.addActionListener(new java.awt.event.ActionListener() {
+        nombreProv.setEditable(false);
+        nombreProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                direccionActionPerformed(evt);
+                nombreProvActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Piezas suministradas:");
+        apellidoProv.setEditable(false);
 
-        jLabel3.setText("Proyectos:");
+        direccionProv.setEditable(false);
+        direccionProv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                direccionProvActionPerformed(evt);
+            }
+        });
 
-        npiezassuministradas.setEditable(false);
+        jLabel2.setText("Piezas suministradas: ");
 
-        nproyectos.setEditable(false);
+        jLabel3.setText("Proyectos: ");
+
+        numpiezasProv.setEditable(false);
+
+        numProv.setEditable(false);
+        numProv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numProvActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,61 +97,64 @@ public class SuministrosProveedor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(ProvLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jComboBoxProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(npiezassuministradas, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(nproyectos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addComponent(numpiezasProv, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(numProv, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(18, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(31, 31, 31))
+                    .addComponent(nombreProv, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(direccionProv, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(61, 61, 61))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(apellidoProv, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap()))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ProvLabel)
+                    .addComponent(jComboBoxProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(npiezassuministradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(numpiezasProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(apellidoProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nproyectos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(numProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(direccionProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void direccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionActionPerformed
+    private void direccionProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionProvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_direccionActionPerformed
+    }//GEN-LAST:event_direccionProvActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        Object[] obj = ldatos.get(jComboBox1.getSelectedIndex());
-        nombre.setText(obj[1].toString());
-        apellido.setText(obj[2].toString());
-        direccion.setText(obj[3].toString());
-        npiezassuministradas.setText(obj[4].toString());
-        nproyectos.setText(obj[5].toString());
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    private void jComboBoxProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxProvActionPerformed
+        Object[] obj = ldatos.get(jComboBoxProv.getSelectedIndex());
+        nombreProv.setText(obj[1].toString());
+        apellidoProv.setText(obj[2].toString());
+        direccionProv.setText(obj[3].toString());
+        numpiezasProv.setText(obj[4].toString());
+        numProv.setText(obj[5].toString());
+    }//GEN-LAST:event_jComboBoxProvActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         ldatos = operaciones.listarDatosSuministrosProveedor();
@@ -150,8 +165,16 @@ public class SuministrosProveedor extends javax.swing.JFrame {
         }
 
         DefaultComboBoxModel defaultComboBoxModel = new DefaultComboBoxModel(codigos);
-        jComboBox1.setModel(defaultComboBoxModel);
+        jComboBoxProv.setModel(defaultComboBoxModel);
     }//GEN-LAST:event_formWindowOpened
+
+    private void nombreProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreProvActionPerformed
+
+    private void numProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numProvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numProvActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,14 +219,14 @@ public class SuministrosProveedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField apellido;
-    private javax.swing.JTextField direccion;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel ProvLabel;
+    private javax.swing.JTextField apellidoProv;
+    private javax.swing.JTextField direccionProv;
+    private javax.swing.JComboBox<String> jComboBoxProv;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JTextField npiezassuministradas;
-    private javax.swing.JTextField nproyectos;
+    private javax.swing.JTextField nombreProv;
+    private javax.swing.JTextField numProv;
+    private javax.swing.JTextField numpiezasProv;
     // End of variables declaration//GEN-END:variables
 }

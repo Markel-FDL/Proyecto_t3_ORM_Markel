@@ -5,6 +5,9 @@
 package Vistas;
 
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+import com.mycompany.proyectos_t3_orm_markel_final.PiezasEntity;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
@@ -16,7 +19,7 @@ import java.util.ArrayList;
 public class ConsultaPiezasNombre extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<Piezas> lpiezas;
+    static ArrayList<PiezasEntity> lpiezas;
     static final String[] col = new String[]{"Codigo", "Nombre", "Precio", "Descripcion"};
 
     /**
@@ -38,12 +41,12 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaResultados = new javax.swing.JTable();
-        bbuscar = new javax.swing.JButton();
+        buscarBoton = new javax.swing.JButton();
         textoBusqueda = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Nombre");
+        jLabel1.setText("Nombre: ");
 
         tablaResultados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -55,10 +58,10 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaResultados);
 
-        bbuscar.setText("Buscar");
-        bbuscar.addActionListener(new java.awt.event.ActionListener() {
+        buscarBoton.setText("Buscar");
+        buscarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bbuscarActionPerformed(evt);
+                buscarBotonActionPerformed(evt);
             }
         });
 
@@ -77,7 +80,7 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(textoBusqueda)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bbuscar)))
+                        .addComponent(buscarBoton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -86,7 +89,7 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(bbuscar)
+                    .addComponent(buscarBoton)
                     .addComponent(textoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -96,14 +99,14 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbuscarActionPerformed
+    private void buscarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBotonActionPerformed
         if (!textoBusqueda.getText().trim().equals("")) {
-            ArrayList<Piezas> temp = operaciones.listarPiezasFiltro("nombre", textoBusqueda.getText());
+            ArrayList<PiezasEntity> temp = operaciones.listarPiezasFiltro("nombre", textoBusqueda.getText());
             if (temp.size() > 0) {
                 lpiezas = temp;
 
                 DefaultTableModel model = new DefaultTableModel(col,0);
-                for (Piezas lpieza : lpiezas) {
+                for (PiezasEntity lpieza : lpiezas) {
                     String[] datos = new String[]{lpieza.getCodigo(), lpieza.getNombre(), String.valueOf(lpieza.getPrecio()), lpieza.getDescripcion()};
                     model.addRow(datos);
                 }
@@ -115,7 +118,7 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Debes de introducir un nombre para poder filtrar piezas", "Operacion cancelada", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_bbuscarActionPerformed
+    }//GEN-LAST:event_buscarBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,7 +219,7 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bbuscar;
+    private javax.swing.JButton buscarBoton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaResultados;

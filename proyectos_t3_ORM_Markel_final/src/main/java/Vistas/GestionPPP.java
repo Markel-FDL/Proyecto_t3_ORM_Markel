@@ -6,6 +6,8 @@ package Vistas;
 
 //import com.mycompany.proyecto.ad.final2.entity.*;
 
+import com.mycompany.proyectos_t3_orm_markel_final.*;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -15,9 +17,9 @@ import java.util.ArrayList;
 public class GestionPPP extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<Proveedores> lproveedores;
-    static ArrayList<Proyectos> lproyectos;
-    static ArrayList<Piezas> lpiezas;
+    static ArrayList<ProveedoresEntity> lproveedores;
+    static ArrayList<ProyectosEntity> lproyectos;
+    static ArrayList<PiezasEntity> lpiezas;
 
     /**
      * Creates new form Gpp
@@ -36,10 +38,10 @@ public class GestionPPP extends javax.swing.JFrame {
     private void initComponents() {
 
         jToolBar1 = new javax.swing.JToolBar();
-        banadir = new javax.swing.JButton();
-        bmodificar = new javax.swing.JButton();
-        beliminar = new javax.swing.JButton();
-        blistado = new javax.swing.JButton();
+        anadirBoton = new javax.swing.JButton();
+        modificarBoton = new javax.swing.JButton();
+        eliminarBoton = new javax.swing.JButton();
+        listadoBoton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -51,12 +53,12 @@ public class GestionPPP extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         cantidad = new javax.swing.JTextField();
-        proveedornombre = new javax.swing.JTextField();
-        proveedorapellidos = new javax.swing.JTextField();
-        piezanombre = new javax.swing.JTextField();
-        piezaprecio = new javax.swing.JTextField();
-        proyectonombre = new javax.swing.JTextField();
-        proyectociudad = new javax.swing.JTextField();
+        nombreProv = new javax.swing.JTextField();
+        apellidosProv = new javax.swing.JTextField();
+        nombrePie = new javax.swing.JTextField();
+        precioPie = new javax.swing.JTextField();
+        nombreProy = new javax.swing.JTextField();
+        ciudadProy = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -68,50 +70,50 @@ public class GestionPPP extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        banadir.setText("Insertar");
-        banadir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        banadir.setMargin(new java.awt.Insets(2, 30, 3, 30));
-        banadir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        banadir.addActionListener(new java.awt.event.ActionListener() {
+        anadirBoton.setText("Insertar");
+        anadirBoton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        anadirBoton.setMargin(new java.awt.Insets(2, 30, 3, 30));
+        anadirBoton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        anadirBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                banadirActionPerformed(evt);
+                anadirBotonActionPerformed(evt);
             }
         });
-        jToolBar1.add(banadir);
+        jToolBar1.add(anadirBoton);
 
-        bmodificar.setText("Modificar");
-        bmodificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bmodificar.setMargin(new java.awt.Insets(2, 30, 3, 30));
-        bmodificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        bmodificar.addActionListener(new java.awt.event.ActionListener() {
+        modificarBoton.setText("Modificar");
+        modificarBoton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        modificarBoton.setMargin(new java.awt.Insets(2, 30, 3, 30));
+        modificarBoton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        modificarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bmodificarActionPerformed(evt);
+                modificarBotonActionPerformed(evt);
             }
         });
-        jToolBar1.add(bmodificar);
+        jToolBar1.add(modificarBoton);
 
-        beliminar.setText("Eliminar");
-        beliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        beliminar.setMargin(new java.awt.Insets(2, 30, 3, 30));
-        beliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        beliminar.addActionListener(new java.awt.event.ActionListener() {
+        eliminarBoton.setText("Eliminar");
+        eliminarBoton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eliminarBoton.setMargin(new java.awt.Insets(2, 30, 3, 30));
+        eliminarBoton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        eliminarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beliminarActionPerformed(evt);
+                eliminarBotonActionPerformed(evt);
             }
         });
-        jToolBar1.add(beliminar);
+        jToolBar1.add(eliminarBoton);
 
-        blistado.setText("Listado");
-        blistado.setFocusable(false);
-        blistado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        blistado.setMargin(new java.awt.Insets(2, 30, 3, 30));
-        blistado.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        blistado.addActionListener(new java.awt.event.ActionListener() {
+        listadoBoton.setText("Listado");
+        listadoBoton.setFocusable(false);
+        listadoBoton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        listadoBoton.setMargin(new java.awt.Insets(2, 30, 3, 30));
+        listadoBoton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        listadoBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blistadoActionPerformed(evt);
+                listadoBotonActionPerformed(evt);
             }
         });
-        jToolBar1.add(blistado);
+        jToolBar1.add(listadoBoton);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -208,17 +210,17 @@ public class GestionPPP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        proveedornombre.setEditable(false);
+        nombreProv.setEditable(false);
 
-        proveedorapellidos.setEditable(false);
+        apellidosProv.setEditable(false);
 
-        piezanombre.setEditable(false);
+        nombrePie.setEditable(false);
 
-        piezaprecio.setEditable(false);
+        precioPie.setEditable(false);
 
-        proyectonombre.setEditable(false);
+        nombreProy.setEditable(false);
 
-        proyectociudad.setEditable(false);
+        ciudadProy.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -233,19 +235,19 @@ public class GestionPPP extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(proveedornombre, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(proveedorapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(nombreProv, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(apellidosProv, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(piezaprecio, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(piezanombre, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(precioPie, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nombrePie, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(12, 12, 12))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(proyectociudad, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(proyectonombre, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ciudadProy, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombreProy, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -258,22 +260,22 @@ public class GestionPPP extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(proveedornombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombreProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(proveedorapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(apellidosProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
-                        .addComponent(piezanombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombrePie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(piezaprecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(precioPie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addComponent(proyectonombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombreProy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(proyectociudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ciudadProy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 51, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        jLabel2.setText("Relaciones piezas - proveedores - proyectos");
+        jLabel2.setText("Relaciones piezas, proveedores, proyectos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,9 +297,9 @@ public class GestionPPP extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(9, Short.MAX_VALUE))
         );
@@ -340,27 +342,27 @@ public class GestionPPP extends javax.swing.JFrame {
     }
 
     private void comboProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProveedorActionPerformed
-        Proveedores p;
+        ProveedoresEntity p;
         p = lproveedores.get(comboProveedor.getSelectedIndex());
-        proveedornombre.setText(p.getNombre());
-        proveedorapellidos.setText(p.getApellidos());
+        nombreProv.setText(p.getNombre());
+        apellidosProv.setText(p.getApellidos());
     }//GEN-LAST:event_comboProveedorActionPerformed
 
     private void comboPiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPiezaActionPerformed
-        Piezas p;
+        PiezasEntity p;
         p = lpiezas.get(comboPieza.getSelectedIndex());
-        piezanombre.setText(p.getNombre());
-        piezaprecio.setText(String.valueOf(p.getPrecio()));
+        nombrePie.setText(p.getNombre());
+        precioPie.setText(String.valueOf(p.getPrecio()));
     }//GEN-LAST:event_comboPiezaActionPerformed
 
     private void comboProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProyectoActionPerformed
-        Proyectos p;
+        ProyectosEntity p;
         p = lproyectos.get(comboProyecto.getSelectedIndex());
-        proyectonombre.setText(p.getNombre());
-        proyectociudad.setText(p.getCiudad());
+        nombreProy.setText(p.getNombre());
+        ciudadProy.setText(p.getCiudad());
     }//GEN-LAST:event_comboProyectoActionPerformed
 
-    private void banadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_banadirActionPerformed
+    private void anadirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anadirBotonActionPerformed
         int cant;
         try {
             cant = Integer.parseInt(cantidad.getText());
@@ -373,7 +375,7 @@ public class GestionPPP extends javax.swing.JFrame {
                 codigos[0] = comboPieza.getSelectedItem().toString();
                 codigos[1] = comboProyecto.getSelectedItem().toString();
                 codigos[2] = comboProveedor.getSelectedItem().toString();
-                Gestion g = new Gestion();
+                GestionEntity g = new GestionEntity();
                 g.setPiezasCodigo(codigos[0]);
                 g.setProyectosCodigo(codigos[1]);
                 g.setProveedoresCodigo(codigos[2]);
@@ -388,9 +390,9 @@ public class GestionPPP extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Se debe introducir un numero como cantidad", "Cantidad incorrecta", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_banadirActionPerformed
+    }//GEN-LAST:event_anadirBotonActionPerformed
 
-    private void bmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmodificarActionPerformed
+    private void modificarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarBotonActionPerformed
         int cant;
         try {
             cant = Integer.parseInt(cantidad.getText());
@@ -416,9 +418,9 @@ public class GestionPPP extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Se debe introducir un numero como cantidad", "Cantidad incorrecta", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_bmodificarActionPerformed
+    }//GEN-LAST:event_modificarBotonActionPerformed
 
-    private void beliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beliminarActionPerformed
+    private void eliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBotonActionPerformed
         String[] codigos = new String[3];
         codigos[0] = comboPieza.getSelectedItem().toString();
         codigos[1] = comboProyecto.getSelectedItem().toString();
@@ -431,17 +433,17 @@ public class GestionPPP extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Error al eliminar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
         }
 
-    }//GEN-LAST:event_beliminarActionPerformed
+    }//GEN-LAST:event_eliminarBotonActionPerformed
 
     private void limpiarDatos(){
         cantidad.setText("");
     }
 
-    private void blistadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blistadoActionPerformed
+    private void listadoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoBotonActionPerformed
         TablaListadoGestion tablaListadoGestion = new TablaListadoGestion();
         tablaListadoGestion.setLocationRelativeTo(null);
         tablaListadoGestion.setVisible(true);
-    }//GEN-LAST:event_blistadoActionPerformed
+    }//GEN-LAST:event_listadoBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -482,14 +484,14 @@ public class GestionPPP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton banadir;
-    private javax.swing.JButton beliminar;
-    private javax.swing.JButton blistado;
-    private javax.swing.JButton bmodificar;
+    private javax.swing.JButton anadirBoton;
+    private javax.swing.JTextField apellidosProv;
     private javax.swing.JTextField cantidad;
+    private javax.swing.JTextField ciudadProy;
     private javax.swing.JComboBox<String> comboPieza;
     private javax.swing.JComboBox<String> comboProveedor;
     private javax.swing.JComboBox<String> comboProyecto;
+    private javax.swing.JButton eliminarBoton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -499,11 +501,11 @@ public class GestionPPP extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JTextField piezanombre;
-    private javax.swing.JTextField piezaprecio;
-    private javax.swing.JTextField proveedorapellidos;
-    private javax.swing.JTextField proveedornombre;
-    private javax.swing.JTextField proyectociudad;
-    private javax.swing.JTextField proyectonombre;
+    private javax.swing.JButton listadoBoton;
+    private javax.swing.JButton modificarBoton;
+    private javax.swing.JTextField nombrePie;
+    private javax.swing.JTextField nombreProv;
+    private javax.swing.JTextField nombreProy;
+    private javax.swing.JTextField precioPie;
     // End of variables declaration//GEN-END:variables
 }

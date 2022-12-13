@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import com.mycompany.proyectos_t3_orm_markel_final.GestionEntity;
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
@@ -67,10 +70,10 @@ public class TablaListadoGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        ArrayList<Gestion> temp = operaciones.listarGestion();
+        ArrayList<GestionEntity> temp = operaciones.listarGestion();
         if (temp.size() > 0) {
             DefaultTableModel model = new DefaultTableModel(col, 0);
-            for (Gestion gest : temp) {
+            for (GestionEntity gest : temp) {
                 String[] datos = new String[] {gest.getPiezasCodigo(),gest.getProyectosCodigo(), gest.getProveedoresCodigo(), String.valueOf(gest.getCantidad())};
                 model.addRow(datos);
             }

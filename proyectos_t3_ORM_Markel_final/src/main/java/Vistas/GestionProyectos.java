@@ -5,6 +5,9 @@
 package Vistas;
 
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+import com.mycompany.proyectos_t3_orm_markel_final.ProyectosEntity;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -14,7 +17,7 @@ import java.util.ArrayList;
 public class GestionProyectos extends javax.swing.JFrame {
     static Operaciones operaciones = new Operaciones();
 
-    static ArrayList<Proyectos> lproyectos;
+    static ArrayList<ProyectosEntity> lproyectos;
 
     static int contador = 1;
 
@@ -39,13 +42,13 @@ public class GestionProyectos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        ciudadProyecto = new javax.swing.JTextField();
-        nomProyecto = new javax.swing.JTextField();
-        binsertar = new javax.swing.JButton();
-        bmodificar = new javax.swing.JButton();
-        blimpiar = new javax.swing.JButton();
-        beliminar = new javax.swing.JButton();
-        codProyecto = new javax.swing.JTextField();
+        ciudadProy = new javax.swing.JTextField();
+        nombreProy = new javax.swing.JTextField();
+        insertarBoton = new javax.swing.JButton();
+        modificarBoton = new javax.swing.JButton();
+        limpiarBoton = new javax.swing.JButton();
+        eliminarBoton = new javax.swing.JButton();
+        codProy = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -67,49 +70,49 @@ public class GestionProyectos extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Codigo del proyecto");
+        jLabel1.setText("Codigo del proyecto: ");
 
-        jLabel2.setText("Nombre");
+        jLabel2.setText("Nombre: ");
 
-        jLabel3.setText("Ciudad");
+        jLabel3.setText("Ciudad: ");
 
-        nomProyecto.addActionListener(new java.awt.event.ActionListener() {
+        nombreProy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomProyectoActionPerformed(evt);
+                nombreProyActionPerformed(evt);
             }
         });
 
-        binsertar.setText("Insertar");
-        binsertar.addActionListener(new java.awt.event.ActionListener() {
+        insertarBoton.setText("Insertar");
+        insertarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                binsertarActionPerformed(evt);
+                insertarBotonActionPerformed(evt);
             }
         });
 
-        bmodificar.setText("Modificar");
-        bmodificar.addActionListener(new java.awt.event.ActionListener() {
+        modificarBoton.setText("Modificar");
+        modificarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bmodificarActionPerformed(evt);
+                modificarBotonActionPerformed(evt);
             }
         });
 
-        blimpiar.setText("Limpiar");
-        blimpiar.addActionListener(new java.awt.event.ActionListener() {
+        limpiarBoton.setText("Limpiar");
+        limpiarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blimpiarActionPerformed(evt);
+                limpiarBotonActionPerformed(evt);
             }
         });
 
-        beliminar.setText("Eliminar");
-        beliminar.addActionListener(new java.awt.event.ActionListener() {
+        eliminarBoton.setText("Eliminar");
+        eliminarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beliminarActionPerformed(evt);
+                eliminarBotonActionPerformed(evt);
             }
         });
 
-        codProyecto.addActionListener(new java.awt.event.ActionListener() {
+        codProy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codProyectoActionPerformed(evt);
+                codProyActionPerformed(evt);
             }
         });
 
@@ -117,57 +120,59 @@ public class GestionProyectos extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(blimpiar)
-                .addGap(18, 18, 18)
-                .addComponent(binsertar)
-                .addGap(18, 18, 18)
-                .addComponent(bmodificar)
-                .addGap(18, 18, 18)
-                .addComponent(beliminar)
-                .addGap(17, 17, 17))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(codProyecto))
+                        .addComponent(codProy))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addGap(24, 24, 24)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nomProyecto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ciudadProyecto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(nombreProy, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ciudadProy, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(62, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(modificarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(limpiarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(insertarBoton)
+                    .addComponent(eliminarBoton))
+                .addGap(116, 116, 116))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ciudadProyecto, nomProyecto});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ciudadProy, nombreProy});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(codProyecto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codProy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(nomProyecto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
+                    .addComponent(nombreProy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ciudadProyecto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(ciudadProy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bmodificar)
-                    .addComponent(beliminar)
-                    .addComponent(binsertar)
-                    .addComponent(blimpiar))
+                    .addComponent(limpiarBoton)
+                    .addComponent(insertarBoton))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modificarBoton)
+                    .addComponent(eliminarBoton))
                 .addGap(32, 32, 32))
         );
 
@@ -175,11 +180,11 @@ public class GestionProyectos extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Gestion de proyectos", jPanel1);
 
-        jLabel5.setText("Codigo del proveedor");
+        jLabel5.setText("Codigo del proveedor: ");
 
-        jLabel6.setText("Nombre");
+        jLabel6.setText("Nombre: ");
 
-        jLabel7.setText("Ciudad");
+        jLabel7.setText("Ciudad: ");
 
         datoCiudad.setEditable(false);
 
@@ -234,39 +239,40 @@ public class GestionProyectos extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(bultimo))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(numero))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                                .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(datoCodigo))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(19, 19, 19)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(datoNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(datoCiudad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(bprimero)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(banterior)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(bsiguiente)
-                                .addGap(33, 33, 33)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(datoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(datoCodigo))
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addGap(25, 25, 25)
+                                    .addComponent(datoCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                    .addGap(42, 42, 42)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(bprimero)
+                                        .addComponent(banterior))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(bsiguiente)
+                                        .addComponent(bultimo))
+                                    .addGap(33, 33, 33)))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(numero)))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(datoCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -274,18 +280,20 @@ public class GestionProyectos extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(datoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(datoCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(26, 26, 26)
+                    .addComponent(jLabel7)
+                    .addComponent(datoCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(numero)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bprimero)
+                    .addComponent(bultimo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bsiguiente)
-                    .addComponent(bultimo)
-                    .addComponent(banterior)
-                    .addComponent(bprimero))
+                    .addComponent(banterior))
                 .addGap(32, 32, 32))
         );
 
@@ -311,16 +319,16 @@ public class GestionProyectos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nomProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomProyectoActionPerformed
+    private void nombreProyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nomProyectoActionPerformed
+    }//GEN-LAST:event_nombreProyActionPerformed
 
-    private void binsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binsertarActionPerformed
-        if (!codProyecto.getText().equals("") && !nomProyecto.getText().equals("") && !ciudadProyecto.getText().equals("")) {
-            Proyectos p = new Proyectos();
-            p.setCodigo(codProyecto.getText().toUpperCase());
-            p.setNombre(nomProyecto.getText());
-            p.setCiudad(ciudadProyecto.getText());
+    private void insertarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertarBotonActionPerformed
+        if (!codProy.getText().equals("") && !nombreProy.getText().equals("") && !ciudadProy.getText().equals("")) {
+            ProyectosEntity p = new ProyectosEntity();
+            p.setCodigo(codProy.getText().toUpperCase());
+            p.setNombre(nombreProy.getText());
+            p.setCiudad(ciudadProy.getText());
             switch (operaciones.anadirProyecto(p)) {
                 case 0 -> JOptionPane.showMessageDialog(this, "Se ha insertado el nuevo proveedor correctamente");
                 case 1 -> JOptionPane.showMessageDialog(this, "Error de BD al insertar proveedor", "Error insertar", JOptionPane.ERROR_MESSAGE);
@@ -330,14 +338,14 @@ public class GestionProyectos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Se deben rellenar todos los campos \npara poder realizar la insercion", "Parametros faltantes", JOptionPane.ERROR_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_binsertarActionPerformed
+    }//GEN-LAST:event_insertarBotonActionPerformed
 
-    private void bmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmodificarActionPerformed
-        Proyectos p = new Proyectos();
-        if (!codProyecto.getText().equals("")) {
-            p.setCodigo(codProyecto.getText());
-            p.setNombre(nomProyecto.getText());
-            p.setCiudad(ciudadProyecto.getText());
+    private void modificarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarBotonActionPerformed
+        ProyectosEntity p = new ProyectosEntity();
+        if (!codProy.getText().equals("")) {
+            p.setCodigo(codProy.getText());
+            p.setNombre(nombreProy.getText());
+            p.setCiudad(ciudadProy.getText());
             switch (operaciones.actualizarProyecto(p)) {
                 case 0 -> JOptionPane.showMessageDialog(this, "Se ha actualizado el proyecto correctamente");
                 case 1 ->
@@ -349,18 +357,18 @@ public class GestionProyectos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder modificar un proyecto", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_bmodificarActionPerformed
+    }//GEN-LAST:event_modificarBotonActionPerformed
 
-    private void blimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blimpiarActionPerformed
+    private void limpiarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarBotonActionPerformed
         limpiarDatos();
-    }//GEN-LAST:event_blimpiarActionPerformed
+    }//GEN-LAST:event_limpiarBotonActionPerformed
 
-    private void beliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beliminarActionPerformed
-        Proyectos p = new Proyectos();
-        if (!codProyecto.getText().equals("")) {
+    private void eliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBotonActionPerformed
+        ProyectosEntity p = new ProyectosEntity();
+        if (!codProy.getText().equals("")) {
             int opcion = JOptionPane.showConfirmDialog(this, "¿Estas seguro de que quieres eliminar el proyecto?", "Confirmacion borrado", JOptionPane.YES_NO_OPTION);
             if (opcion == 0) {
-                p.setCodigo(codProyecto.getText());
+                p.setCodigo(codProy.getText());
                 switch (operaciones.eliminarProyecto(p)) {
                     case 0 -> JOptionPane.showMessageDialog(this, "Se ha eliminado el proyecto correctamente");
                     case 1 ->
@@ -376,12 +384,12 @@ public class GestionProyectos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder eliminar un proyecto", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_beliminarActionPerformed
+    }//GEN-LAST:event_eliminarBotonActionPerformed
 
     private void limpiarDatos() {
-        nomProyecto.setText("");
-        ciudadProyecto.setText("");
-        codProyecto.setText("");
+        nombreProy.setText("");
+        ciudadProy.setText("");
+        codProy.setText("");
     }
 
     private void datoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datoNombreActionPerformed
@@ -412,9 +420,9 @@ public class GestionProyectos extends javax.swing.JFrame {
         cargarProyecto(contador);
     }//GEN-LAST:event_bultimoActionPerformed
 
-    private void codProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codProyectoActionPerformed
+    private void codProyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codProyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_codProyectoActionPerformed
+    }//GEN-LAST:event_codProyActionPerformed
 
     private void datoCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datoCodigoActionPerformed
         // TODO add your handling code here:
@@ -481,18 +489,16 @@ public class GestionProyectos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton banterior;
-    private javax.swing.JButton beliminar;
-    private javax.swing.JButton binsertar;
-    private javax.swing.JButton blimpiar;
-    private javax.swing.JButton bmodificar;
     private javax.swing.JButton bprimero;
     private javax.swing.JButton bsiguiente;
     private javax.swing.JButton bultimo;
-    private javax.swing.JTextField ciudadProyecto;
-    private javax.swing.JTextField codProyecto;
+    private javax.swing.JTextField ciudadProy;
+    private javax.swing.JTextField codProy;
     private javax.swing.JTextField datoCiudad;
     private javax.swing.JTextField datoCodigo;
     private javax.swing.JTextField datoNombre;
+    private javax.swing.JButton eliminarBoton;
+    private javax.swing.JButton insertarBoton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -502,7 +508,9 @@ public class GestionProyectos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField nomProyecto;
+    private javax.swing.JButton limpiarBoton;
+    private javax.swing.JButton modificarBoton;
+    private javax.swing.JTextField nombreProy;
     private javax.swing.JLabel numero;
     // End of variables declaration//GEN-END:variables
 }

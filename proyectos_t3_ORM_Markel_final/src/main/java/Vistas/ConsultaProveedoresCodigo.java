@@ -5,6 +5,9 @@
 package Vistas;
 
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+import com.mycompany.proyectos_t3_orm_markel_final.ProveedoresEntity;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -15,7 +18,7 @@ import java.util.ArrayList;
 public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<Proveedores> lproveedores;
+    static ArrayList<ProveedoresEntity> lproveedores;
     static String[] codigos;
 
     /**
@@ -38,12 +41,12 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
         comboCodigos = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        textoCod = new javax.swing.JTextField();
-        bbuscar = new javax.swing.JButton();
+        textoCodigo = new javax.swing.JTextField();
+        buscarBoton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Escribe el codigo");
+        jLabel1.setText("Escribe el codigo: ");
 
         comboCodigos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Realiza busqueda--" }));
         comboCodigos.addActionListener(new java.awt.event.ActionListener() {
@@ -57,16 +60,16 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        textoCod.addActionListener(new java.awt.event.ActionListener() {
+        textoCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoCodActionPerformed(evt);
+                textoCodigoActionPerformed(evt);
             }
         });
 
-        bbuscar.setText("Buscar");
-        bbuscar.addActionListener(new java.awt.event.ActionListener() {
+        buscarBoton.setText("Buscar");
+        buscarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bbuscarActionPerformed(evt);
+                buscarBotonActionPerformed(evt);
             }
         });
 
@@ -86,10 +89,10 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel1)
-                        .addGap(27, 27, 27)
-                        .addComponent(textoCod)
                         .addGap(18, 18, 18)
-                        .addComponent(bbuscar)))
+                        .addComponent(textoCodigo)
+                        .addGap(27, 27, 27)
+                        .addComponent(buscarBoton)))
                 .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
@@ -97,8 +100,8 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textoCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bbuscar)
+                    .addComponent(textoCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buscarBoton)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(comboCodigos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -110,13 +113,13 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textoCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoCodActionPerformed
+    private void textoCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textoCodActionPerformed
+    }//GEN-LAST:event_textoCodigoActionPerformed
 
     private void comboCodigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCodigosActionPerformed
         if (!comboCodigos.getModel().getSelectedItem().toString().equals("--Realiza busqueda--")) {
-            Proveedores p = new Proveedores();
+            ProveedoresEntity p = new ProveedoresEntity();
             p = lproveedores.get(comboCodigos.getSelectedIndex());
             jTextArea1.setText("Nombre: " + p.getNombre() + "\n" +
                     "\n" +
@@ -126,10 +129,10 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_comboCodigosActionPerformed
 
-    private void bbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbuscarActionPerformed
+    private void buscarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBotonActionPerformed
 
-        if (!textoCod.getText().trim().equals("")) {
-            ArrayList<Proveedores> temp = operaciones.listarProveedorFiltro("codigo", textoCod.getText());
+        if (!textoCodigo.getText().trim().equals("")) {
+            ArrayList<ProveedoresEntity> temp = operaciones.listarProveedorFiltro("codigo", textoCodigo.getText());
             if (temp.size() > 0) {
                 lproveedores = temp;
                 codigos = new String[lproveedores.size()];
@@ -138,7 +141,7 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
                 }
                 DefaultComboBoxModel modelo = new DefaultComboBoxModel(codigos);
                 comboCodigos.setModel(modelo);
-                textoCod.setText("");
+                textoCodigo.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "No se ha encontrado ningun codigo\n que coincida con la busqueda" , "No hay datos", JOptionPane.ERROR_MESSAGE);
             }
@@ -146,7 +149,7 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Debes de introducir un codigo para poder filtrar proveedores" , "Operacion cancelada", JOptionPane.WARNING_MESSAGE);
         }
 
-    }//GEN-LAST:event_bbuscarActionPerformed
+    }//GEN-LAST:event_buscarBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,11 +194,11 @@ public class ConsultaProveedoresCodigo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bbuscar;
+    private javax.swing.JButton buscarBoton;
     private javax.swing.JComboBox<String> comboCodigos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField textoCod;
+    private javax.swing.JTextField textoCodigo;
     // End of variables declaration//GEN-END:variables
 }

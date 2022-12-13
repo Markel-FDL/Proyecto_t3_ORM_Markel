@@ -4,6 +4,9 @@
  */
 package Vistas;
 
+import com.mycompany.proyectos_t3_orm_markel_final.Operaciones;
+import com.mycompany.proyectos_t3_orm_markel_final.ProveedoresEntity;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -13,7 +16,7 @@ import java.util.ArrayList;
 public class GestionProveedores extends javax.swing.JFrame {
     static Operaciones operaciones = new Operaciones();
 
-    static ArrayList<Proveedores> lproveedores;
+    static ArrayList<ProveedoresEntity> lproveedores;
 
     static int contador = 0;
 
@@ -39,14 +42,14 @@ public class GestionProveedores extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        apeProveedor = new javax.swing.JTextField();
-        direcProveedor = new javax.swing.JTextField();
-        nomProveedor = new javax.swing.JTextField();
-        binsertar = new javax.swing.JButton();
-        bmodificar = new javax.swing.JButton();
-        blimpiar = new javax.swing.JButton();
-        beliminar = new javax.swing.JButton();
-        codProveedor = new javax.swing.JTextField();
+        apellidoProv = new javax.swing.JTextField();
+        direccionProv = new javax.swing.JTextField();
+        nombreProv = new javax.swing.JTextField();
+        insertarBoton = new javax.swing.JButton();
+        modificarBoton = new javax.swing.JButton();
+        limpiarBoton = new javax.swing.JButton();
+        eliminarBoton = new javax.swing.JButton();
+        codigoProv = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -70,51 +73,51 @@ public class GestionProveedores extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Codigo del proveedor");
+        jLabel1.setText("Codigo del proveedor:");
 
-        jLabel2.setText("Nombre");
+        jLabel2.setText("Nombre: ");
 
-        jLabel3.setText("Apellidos");
+        jLabel3.setText("Apellidos: ");
 
-        jLabel4.setText("Direccion");
+        jLabel4.setText("Direccion: ");
 
-        nomProveedor.addActionListener(new java.awt.event.ActionListener() {
+        nombreProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomProveedorActionPerformed(evt);
+                nombreProvActionPerformed(evt);
             }
         });
 
-        binsertar.setText("Insertar");
-        binsertar.addActionListener(new java.awt.event.ActionListener() {
+        insertarBoton.setText("Insertar");
+        insertarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                binsertarActionPerformed(evt);
+                insertarBotonActionPerformed(evt);
             }
         });
 
-        bmodificar.setText("Modificar");
-        bmodificar.addActionListener(new java.awt.event.ActionListener() {
+        modificarBoton.setText("Modificar");
+        modificarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bmodificarActionPerformed(evt);
+                modificarBotonActionPerformed(evt);
             }
         });
 
-        blimpiar.setText("Limpiar");
-        blimpiar.addActionListener(new java.awt.event.ActionListener() {
+        limpiarBoton.setText("Limpiar");
+        limpiarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blimpiarActionPerformed(evt);
+                limpiarBotonActionPerformed(evt);
             }
         });
 
-        beliminar.setText("Eliminar");
-        beliminar.addActionListener(new java.awt.event.ActionListener() {
+        eliminarBoton.setText("Eliminar");
+        eliminarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beliminarActionPerformed(evt);
+                eliminarBotonActionPerformed(evt);
             }
         });
 
-        codProveedor.addActionListener(new java.awt.event.ActionListener() {
+        codigoProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codProveedorActionPerformed(evt);
+                codigoProvActionPerformed(evt);
             }
         });
 
@@ -122,18 +125,8 @@ public class GestionProveedores extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(blimpiar)
-                .addGap(18, 18, 18)
-                .addComponent(binsertar)
-                .addGap(18, 18, 18)
-                .addComponent(bmodificar)
-                .addGap(18, 18, 18)
-                .addComponent(beliminar)
-                .addGap(17, 17, 17))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,17 +135,27 @@ public class GestionProveedores extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nomProveedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(apeProveedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(direcProveedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(nombreProv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(apellidoProv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(direccionProv, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(codProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(codigoProv, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(80, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(modificarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(limpiarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(insertarBoton)
+                    .addComponent(eliminarBoton))
+                .addGap(116, 116, 116))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {apeProveedor, direcProveedor, nomProveedor});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {apellidoProv, direccionProv, nombreProv});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,25 +163,27 @@ public class GestionProveedores extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(codProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(codigoProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(nomProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombreProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(apeProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(apellidoProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(direcProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(direccionProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bmodificar)
-                    .addComponent(beliminar)
-                    .addComponent(binsertar)
-                    .addComponent(blimpiar))
+                    .addComponent(limpiarBoton)
+                    .addComponent(insertarBoton))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modificarBoton)
+                    .addComponent(eliminarBoton))
                 .addGap(32, 32, 32))
         );
 
@@ -246,16 +251,6 @@ public class GestionProveedores extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addComponent(bprimero)
-                .addGap(18, 18, 18)
-                .addComponent(banterior)
-                .addGap(18, 18, 18)
-                .addComponent(bsiguiente)
-                .addGap(18, 18, 18)
-                .addComponent(bultimo)
-                .addGap(17, 17, 17))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -279,6 +274,16 @@ public class GestionProveedores extends javax.swing.JFrame {
                         .addGap(187, 187, 187)
                         .addComponent(numeros)))
                 .addContainerGap(70, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bprimero)
+                    .addComponent(banterior))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bsiguiente)
+                    .addComponent(bultimo))
+                .addGap(107, 107, 107))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,14 +304,16 @@ public class GestionProveedores extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(datoDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(numeros)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bprimero)
+                    .addComponent(bultimo))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bsiguiente)
-                    .addComponent(bultimo)
-                    .addComponent(banterior)
-                    .addComponent(bprimero))
+                    .addComponent(banterior))
                 .addGap(32, 32, 32))
         );
 
@@ -329,17 +336,17 @@ public class GestionProveedores extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nomProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomProveedorActionPerformed
+    private void nombreProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nomProveedorActionPerformed
+    }//GEN-LAST:event_nombreProvActionPerformed
 
-    private void binsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_binsertarActionPerformed
-        if (!codProveedor.getText().equals("") && !nomProveedor.getText().equals("") && !apeProveedor.getText().equals("") && !direcProveedor.getText().equals("")) {
-            Proveedores p = new Proveedores();
-            p.setCodigo(codProveedor.getText().toUpperCase());
-            p.setNombre(nomProveedor.getText());
-            p.setApellidos(apeProveedor.getText());
-            p.setDireccion(direcProveedor.getText());
+    private void insertarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertarBotonActionPerformed
+        if (!codigoProv.getText().equals("") && !nombreProv.getText().equals("") && !apellidoProv.getText().equals("") && !direccionProv.getText().equals("")) {
+            ProveedoresEntity p = new ProveedoresEntity();
+            p.setCodigo(codigoProv.getText().toUpperCase());
+            p.setNombre(nombreProv.getText());
+            p.setApellidos(apellidoProv.getText());
+            p.setDireccion(direccionProv.getText());
             switch (operaciones.anadirProveedor(p)) {
                 case 0 -> JOptionPane.showMessageDialog(this, "Se ha insertado el nuevo proveedor correctamente");
                 case 1 -> JOptionPane.showMessageDialog(this, "Error de BD al insertar proveedor", "Error insertar", JOptionPane.ERROR_MESSAGE);
@@ -349,15 +356,15 @@ public class GestionProveedores extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Se deben rellenar todos los campos \npara poder realizar la insercion", "Parametros faltantes", JOptionPane.ERROR_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_binsertarActionPerformed
+    }//GEN-LAST:event_insertarBotonActionPerformed
 
-    private void bmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bmodificarActionPerformed
-        Proveedores p = new Proveedores();
-        if (!codProveedor.getText().equals("")) {
-            p.setCodigo(codProveedor.getText());
-            p.setNombre(nomProveedor.getText());
-            p.setApellidos(apeProveedor.getText());
-            p.setDireccion(direcProveedor.getText());
+    private void modificarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarBotonActionPerformed
+        ProveedoresEntity p = new ProveedoresEntity();
+        if (!codigoProv.getText().equals("")) {
+            p.setCodigo(codigoProv.getText());
+            p.setNombre(nombreProv.getText());
+            p.setApellidos(apellidoProv.getText());
+            p.setDireccion(direccionProv.getText());
             switch (operaciones.actualizarProveedor(p)) {
                 case 0 -> JOptionPane.showMessageDialog(this, "Se ha actualizado el proveedor correctamente");
                 case 1 ->
@@ -369,19 +376,19 @@ public class GestionProveedores extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder modificar un proveedor", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_bmodificarActionPerformed
+    }//GEN-LAST:event_modificarBotonActionPerformed
 
-    private void blimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blimpiarActionPerformed
+    private void limpiarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarBotonActionPerformed
         limpiarDatos();
-    }//GEN-LAST:event_blimpiarActionPerformed
+    }//GEN-LAST:event_limpiarBotonActionPerformed
 
 
-    private void beliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beliminarActionPerformed
-        Proveedores p = new Proveedores();
-        if (!codProveedor.getText().equals("")) {
+    private void eliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBotonActionPerformed
+        ProveedoresEntity p = new ProveedoresEntity();
+        if (!codigoProv.getText().equals("")) {
             int opcion = JOptionPane.showConfirmDialog(this, "¿Estas seguro de que quieres eliminar el proveedor?", "Confirmacion borrado", JOptionPane.YES_NO_OPTION);
             if (opcion == 0) {
-                p.setCodigo(codProveedor.getText());
+                p.setCodigo(codigoProv.getText());
                 switch (operaciones.eliminarProveedor(p)) {
                     case 0 -> JOptionPane.showMessageDialog(this, "Se ha eliminado el proveedor correctamente");
                     case 1 ->
@@ -396,13 +403,13 @@ public class GestionProveedores extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder eliminar un proveedor", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
-    }//GEN-LAST:event_beliminarActionPerformed
+    }//GEN-LAST:event_eliminarBotonActionPerformed
 
     private void limpiarDatos() {
-        codProveedor.setText("");
-        nomProveedor.setText("");
-        apeProveedor.setText("");
-        direcProveedor.setText("");
+        codigoProv.setText("");
+        nombreProv.setText("");
+        apellidoProv.setText("");
+        direccionProv.setText("");
     }
 
     private void datonombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datonombreActionPerformed
@@ -433,9 +440,9 @@ public class GestionProveedores extends javax.swing.JFrame {
         cargarProveedor(contador);
     }//GEN-LAST:event_bultimoActionPerformed
 
-    private void codProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codProveedorActionPerformed
+    private void codigoProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoProvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_codProveedorActionPerformed
+    }//GEN-LAST:event_codigoProvActionPerformed
 
     private void datoCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datoCodigoActionPerformed
         // TODO add your handling code here:
@@ -497,21 +504,19 @@ public class GestionProveedores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField apeProveedor;
+    private javax.swing.JTextField apellidoProv;
     private javax.swing.JButton banterior;
-    private javax.swing.JButton beliminar;
-    private javax.swing.JButton binsertar;
-    private javax.swing.JButton blimpiar;
-    private javax.swing.JButton bmodificar;
     private javax.swing.JButton bprimero;
     private javax.swing.JButton bsiguiente;
     private javax.swing.JButton bultimo;
-    private javax.swing.JTextField codProveedor;
+    private javax.swing.JTextField codigoProv;
     private javax.swing.JTextField datoApellidos;
     private javax.swing.JTextField datoCodigo;
     private javax.swing.JTextField datoDireccion;
     private javax.swing.JTextField datonombre;
-    private javax.swing.JTextField direcProveedor;
+    private javax.swing.JTextField direccionProv;
+    private javax.swing.JButton eliminarBoton;
+    private javax.swing.JButton insertarBoton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -523,7 +528,9 @@ public class GestionProveedores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField nomProveedor;
+    private javax.swing.JButton limpiarBoton;
+    private javax.swing.JButton modificarBoton;
+    private javax.swing.JTextField nombreProv;
     private javax.swing.JLabel numeros;
     // End of variables declaration//GEN-END:variables
 }
