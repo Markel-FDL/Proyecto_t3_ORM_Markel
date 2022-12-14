@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class GestionProveedores extends javax.swing.JFrame {
     static Operaciones operaciones = new Operaciones();
 
-    static ArrayList<ProveedoresEntity> lproveedores;
+    static ArrayList<ProveedoresEntity> listaProveedores;
 
     static int contador = 0;
 
@@ -424,7 +424,7 @@ public class GestionProveedores extends javax.swing.JFrame {
     }//GEN-LAST:event_banteriorActionPerformed
 
     private void bsiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsiguienteActionPerformed
-        if (contador < (lproveedores.size() - 1) ){
+        if (contador < (listaProveedores.size() - 1) ){
             contador++;
             cargarProveedor(contador);
         }
@@ -436,7 +436,7 @@ public class GestionProveedores extends javax.swing.JFrame {
     }//GEN-LAST:event_bprimeroActionPerformed
 
     private void bultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bultimoActionPerformed
-        contador = lproveedores.size() - 1;
+        contador = listaProveedores.size() - 1;
         cargarProveedor(contador);
     }//GEN-LAST:event_bultimoActionPerformed
 
@@ -453,17 +453,19 @@ public class GestionProveedores extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void cargarTab() {
-        lproveedores = operaciones.listarProveedores();
+        listaProveedores = operaciones.listarProveedores();
         contador = 0;
         cargarProveedor(contador);
     }
 
     private void cargarProveedor(int contador) {
-        numeros.setText(contador + 1 + "/" + lproveedores.size());
-        datoCodigo.setText(lproveedores.get(contador).getCodigo());
-        datonombre.setText(lproveedores.get(contador).getNombre());
-        datoApellidos.setText(lproveedores.get(contador).getApellidos());
-        datoDireccion.setText(lproveedores.get(contador).getDireccion());
+        if (!listaProveedores.isEmpty()) {
+            numeros.setText(contador + 1 + "/" + listaProveedores.size());
+            datoCodigo.setText(listaProveedores.get(contador).getCodigo());
+            datonombre.setText(listaProveedores.get(contador).getNombre());
+            datoApellidos.setText(listaProveedores.get(contador).getApellidos());
+            datoDireccion.setText(listaProveedores.get(contador).getDireccion());
+        }
     }
     /**
      * @param args the command line arguments

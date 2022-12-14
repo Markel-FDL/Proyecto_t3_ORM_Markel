@@ -17,9 +17,9 @@ import java.util.ArrayList;
 public class GestionPPP extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<ProveedoresEntity> lproveedores;
-    static ArrayList<ProyectosEntity> lproyectos;
-    static ArrayList<PiezasEntity> lpiezas;
+    static ArrayList<ProveedoresEntity> listaProveedores;
+    static ArrayList<ProyectosEntity> listaProyectos;
+    static ArrayList<PiezasEntity> listaPiezas;
 
     /**
      * Creates new form Gpp
@@ -316,26 +316,26 @@ public class GestionPPP extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void cargarDatos() {
-        lproyectos = operaciones.listarProyectos();
-        String[] codigosOperacines = new String[lproyectos.size()];
-        for (int i = 0; i < lproyectos.size(); i++) {
-            codigosOperacines[i] = lproyectos.get(i).getCodigo();
+        listaProyectos = operaciones.listarProyectos();
+        String[] codigosOperacines = new String[listaProyectos.size()];
+        for (int i = 0; i < listaProyectos.size(); i++) {
+            codigosOperacines[i] = listaProyectos.get(i).getCodigo();
         }
         DefaultComboBoxModel defaultComboBoxModel = new DefaultComboBoxModel(codigosOperacines);
         comboProyecto.setModel(defaultComboBoxModel);
 
-        lproveedores = operaciones.listarProveedores();
-        String[] codigosProveedores = new String[lproveedores.size()];
-        for (int i = 0; i < lproveedores.size(); i++) {
-            codigosProveedores[i] = lproveedores.get(i).getCodigo();
+        listaProveedores = operaciones.listarProveedores();
+        String[] codigosProveedores = new String[listaProveedores.size()];
+        for (int i = 0; i < listaProveedores.size(); i++) {
+            codigosProveedores[i] = listaProveedores.get(i).getCodigo();
         }
         DefaultComboBoxModel defaultComboBoxModel2 = new DefaultComboBoxModel(codigosProveedores);
         comboProveedor.setModel(defaultComboBoxModel2);
 
-        lpiezas = operaciones.listarPiezas();
-        String[] codigosPiezas = new String[lpiezas.size()];
-        for (int i = 0; i < lpiezas.size(); i++) {
-            codigosPiezas[i] = lpiezas.get(i).getCodigo();
+        listaPiezas = operaciones.listarPiezas();
+        String[] codigosPiezas = new String[listaPiezas.size()];
+        for (int i = 0; i < listaPiezas.size(); i++) {
+            codigosPiezas[i] = listaPiezas.get(i).getCodigo();
         }
         DefaultComboBoxModel defaultComboBoxModel3 = new DefaultComboBoxModel(codigosPiezas);
         comboPieza.setModel(defaultComboBoxModel3);
@@ -343,21 +343,21 @@ public class GestionPPP extends javax.swing.JFrame {
 
     private void comboProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProveedorActionPerformed
         ProveedoresEntity p;
-        p = lproveedores.get(comboProveedor.getSelectedIndex());
+        p = listaProveedores.get(comboProveedor.getSelectedIndex());
         nombreProv.setText(p.getNombre());
         apellidosProv.setText(p.getApellidos());
     }//GEN-LAST:event_comboProveedorActionPerformed
 
     private void comboPiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPiezaActionPerformed
         PiezasEntity p;
-        p = lpiezas.get(comboPieza.getSelectedIndex());
+        p = listaPiezas.get(comboPieza.getSelectedIndex());
         nombrePie.setText(p.getNombre());
         precioPie.setText(String.valueOf(p.getPrecio()));
     }//GEN-LAST:event_comboPiezaActionPerformed
 
     private void comboProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProyectoActionPerformed
         ProyectosEntity p;
-        p = lproyectos.get(comboProyecto.getSelectedIndex());
+        p = listaProyectos.get(comboProyecto.getSelectedIndex());
         nombreProy.setText(p.getNombre());
         ciudadProy.setText(p.getCiudad());
     }//GEN-LAST:event_comboProyectoActionPerformed

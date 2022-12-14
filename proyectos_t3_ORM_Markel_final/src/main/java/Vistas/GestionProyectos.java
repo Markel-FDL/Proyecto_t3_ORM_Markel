@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class GestionProyectos extends javax.swing.JFrame {
     static Operaciones operaciones = new Operaciones();
 
-    static ArrayList<ProyectosEntity> lproyectos;
+    static ArrayList<ProyectosEntity> listaProyectos;
 
     static int contador = 1;
 
@@ -404,7 +404,7 @@ public class GestionProyectos extends javax.swing.JFrame {
     }//GEN-LAST:event_banteriorActionPerformed
 
     private void bsiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsiguienteActionPerformed
-        if (contador < (lproyectos.size() - 1) ){
+        if (contador < (listaProyectos.size() - 1) ){
             contador++;
             cargarProyecto(contador);
         }
@@ -416,7 +416,7 @@ public class GestionProyectos extends javax.swing.JFrame {
     }//GEN-LAST:event_bprimeroActionPerformed
 
     private void bultimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bultimoActionPerformed
-        contador = lproyectos.size() - 1;
+        contador = listaProyectos.size() - 1;
         cargarProyecto(contador);
     }//GEN-LAST:event_bultimoActionPerformed
 
@@ -433,16 +433,18 @@ public class GestionProyectos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void cargarTab() {
-        lproyectos = operaciones.listarProyectos();
+        listaProyectos = operaciones.listarProyectos();
         contador = 0;
         cargarProyecto(contador);
     }
 
     private void cargarProyecto(int contador) {
-        numero.setText(contador + 1 + "/" + lproyectos.size());
-        datoCodigo.setText(lproyectos.get(contador).getCodigo());
-        datoNombre.setText(lproyectos.get(contador).getNombre());
-        datoCiudad.setText(lproyectos.get(contador).getCiudad());
+        if (!listaProyectos.isEmpty()) {
+            numero.setText(contador + 1 + "/" + listaProyectos.size());
+            datoCodigo.setText(listaProyectos.get(contador).getCodigo());
+            datoNombre.setText(listaProyectos.get(contador).getNombre());
+            datoCiudad.setText(listaProyectos.get(contador).getCiudad());
+        }
     }
 
     /**

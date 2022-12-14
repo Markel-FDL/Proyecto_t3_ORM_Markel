@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class GestionPiezas extends javax.swing.JFrame {
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<PiezasEntity> lpiezas;
+    static ArrayList<PiezasEntity> listaPiezas;
     static int contador;
 
     /**
@@ -153,13 +153,13 @@ public class GestionPiezas extends javax.swing.JFrame {
                         .addGap(87, 87, 87))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(insertarBoton, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(limpiarBoton, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(eliminarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                            .addComponent(limpiarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(modificarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eliminarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(insertarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(108, 108, 108))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -183,24 +183,23 @@ public class GestionPiezas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(precioPie, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(eliminarBoton)
-                            .addComponent(limpiarBoton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(limpiarBoton)
+                            .addComponent(insertarBoton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(modificarBoton)
+                            .addComponent(eliminarBoton))
+                        .addGap(22, 22, 22))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel13)
-                        .addGap(73, 73, 73)))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(insertarBoton)
-                    .addComponent(modificarBoton))
-                .addGap(22, 22, 22))
+                        .addGap(128, 128, 128))))
         );
 
         jTabbedPane1.addTab("Gestion de piezas", jPanel1);
@@ -441,7 +440,7 @@ public class GestionPiezas extends javax.swing.JFrame {
     }//GEN-LAST:event_anteriorBotonActionPerformed
 
     private void siguienteBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteBotonActionPerformed
-        if (contador < (lpiezas.size() - 1)) {
+        if (contador < (listaPiezas.size() - 1)) {
             contador++;
             cargarProveedor(contador);
         }
@@ -453,7 +452,7 @@ public class GestionPiezas extends javax.swing.JFrame {
     }//GEN-LAST:event_primeroBotonActionPerformed
 
     private void ultimoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultimoBotonActionPerformed
-        contador = lpiezas.size() - 1;
+        contador = listaPiezas.size() - 1;
         cargarProveedor(contador);
     }//GEN-LAST:event_ultimoBotonActionPerformed
 
@@ -478,17 +477,19 @@ public class GestionPiezas extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void cargarTab() {
-        lpiezas = operaciones.listarPiezas();
+        listaPiezas = operaciones.listarPiezas();
         contador = 0;
         cargarProveedor(contador);
     }
 
     private void cargarProveedor(int contador) {
-        numeroPie.setText(contador + 1 + "/" + lpiezas.size());
-        datosCodigoPie.setText(lpiezas.get(contador).getCodigo());
-        datosNombrePie.setText(lpiezas.get(contador).getNombre());
-        datoPrecio.setValue(lpiezas.get(contador).getPrecio());
-        datoDescripcion.setText(lpiezas.get(contador).getDescripcion());
+        if (!listaPiezas.isEmpty()) {
+            numeroPie.setText(contador + 1 + "/" + listaPiezas.size());
+            datosCodigoPie.setText(listaPiezas.get(contador).getCodigo());
+            datosNombrePie.setText(listaPiezas.get(contador).getNombre());
+            datoPrecio.setValue(listaPiezas.get(contador).getPrecio());
+            datoDescripcion.setText(listaPiezas.get(contador).getDescripcion());
+        }
     }
 
 
