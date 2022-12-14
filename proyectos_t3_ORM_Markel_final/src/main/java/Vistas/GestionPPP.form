@@ -28,16 +28,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jToolBar1" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="anadirBoton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="modificarBoton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="eliminarBoton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="listadoBoton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="jToolBar1" max="32767" attributes="0"/>
+                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -46,11 +50,16 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jToolBar1" min="-2" pref="25" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="9" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="anadirBoton" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="modificarBoton" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="eliminarBoton" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="listadoBoton" min="-2" pref="21" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,58 +72,10 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="anadirBoton">
+        <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Insertar"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-              <Insets value="[2, 30, 3, 30]"/>
-            </Property>
-            <Property name="verticalTextPosition" type="int" value="3"/>
+            <Property name="text" type="java.lang.String" value="Relaciones piezas, proveedores, proyectos"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="anadirBotonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="modificarBoton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Modificar"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-              <Insets value="[2, 30, 3, 30]"/>
-            </Property>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificarBotonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="eliminarBoton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Eliminar"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-              <Insets value="[2, 30, 3, 30]"/>
-            </Property>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarBotonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="listadoBoton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Listado"/>
-            <Property name="focusable" type="boolean" value="false"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-              <Insets value="[2, 30, 3, 30]"/>
-            </Property>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listadoBotonActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -193,7 +154,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -271,7 +232,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Proveedor"/>
+                <Property name="text" type="java.lang.String" value="Proveedor: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="comboProveedor">
@@ -312,7 +273,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Pieza"/>
+                <Property name="text" type="java.lang.String" value="Pieza: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="comboProyecto">
@@ -335,12 +296,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Proyecto"/>
+                <Property name="text" type="java.lang.String" value="Proyecto: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cantidad"/>
+                <Property name="text" type="java.lang.String" value="Cantidad: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="cantidad">
@@ -382,10 +343,57 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JButton" name="anadirBoton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Relaciones piezas, proveedores, proyectos"/>
+        <Property name="text" type="java.lang.String" value="Insertar"/>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+          <Insets value="[2, 30, 3, 30]"/>
+        </Property>
+        <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="anadirBotonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="modificarBoton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modificar"/>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+          <Insets value="[2, 30, 3, 30]"/>
+        </Property>
+        <Property name="verticalTextPosition" type="int" value="3"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificarBotonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="eliminarBoton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eliminar"/>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+          <Insets value="[2, 30, 3, 30]"/>
+        </Property>
+        <Property name="verticalTextPosition" type="int" value="3"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarBotonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="listadoBoton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Listado"/>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+          <Insets value="[2, 30, 3, 30]"/>
+        </Property>
+        <Property name="verticalTextPosition" type="int" value="3"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listadoBotonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
