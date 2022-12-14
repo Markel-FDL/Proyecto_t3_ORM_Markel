@@ -79,7 +79,7 @@ public class TablaPiezaProveedor extends javax.swing.JFrame {
             jTable1.setModel(model);
 
         } else {
-            JOptionPane.showMessageDialog(this, "No se han podido cargar los datos", "Error carga", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< No se han encontrado datos >>", "Error de carga", JOptionPane.ERROR_MESSAGE);
         }
 
         //SELECT p.*, (SELECT COUNT( DISTINCT piezas_codigo) FROM gestion WHERE proveedores_codigo = p.codigo), COALESCE((SELECT SUM(cantidad) FROM gestion WHERE proveedores_codigo = p.codigo) , 0), (SELECT COUNT( DISTINCT proyectos_codigo) FROM gestion WHERE proveedores_codigo = p.codigo) FROM proveedores p;

@@ -348,12 +348,12 @@ public class GestionProveedores extends javax.swing.JFrame {
             p.setApellidos(apellidoProv.getText());
             p.setDireccion(direccionProv.getText());
             switch (operaciones.anadirProveedor(p)) {
-                case 0 -> JOptionPane.showMessageDialog(this, "Se ha insertado el nuevo proveedor correctamente");
-                case 1 -> JOptionPane.showMessageDialog(this, "Error de BD al insertar proveedor", "Error insertar", JOptionPane.ERROR_MESSAGE);
-                case 2 -> JOptionPane.showMessageDialog(this, "Ya existe una proveedor con el mismo codigo", "Codigo duplicado", JOptionPane.ERROR_MESSAGE);
+                case 0 -> JOptionPane.showMessageDialog(this, "<< Proveedor correctamente insertado >>");
+                case 1 -> JOptionPane.showMessageDialog(this, "<< Error al insertar proveedor >>", "Error al insertar", JOptionPane.ERROR_MESSAGE);
+                case 2 -> JOptionPane.showMessageDialog(this, "<< El codigo ya existe >>", "Codigo existente", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se deben rellenar todos los campos \npara poder realizar la insercion", "Parametros faltantes", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Faltan campos por rellenar para realizar la insercion >>", "Parametros vacion", JOptionPane.ERROR_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_insertarBotonActionPerformed
@@ -366,14 +366,14 @@ public class GestionProveedores extends javax.swing.JFrame {
             p.setApellidos(apellidoProv.getText());
             p.setDireccion(direccionProv.getText());
             switch (operaciones.actualizarProveedor(p)) {
-                case 0 -> JOptionPane.showMessageDialog(this, "Se ha actualizado el proveedor correctamente");
+                case 0 -> JOptionPane.showMessageDialog(this, "<< Proveedor actualizado correctamente >>");
                 case 1 ->
-                        JOptionPane.showMessageDialog(this, "No se ha encontrado una proveedor \ncorrespondiente al codigo intoducido", "Error codigo", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "<< No se ha encontrado proveedor >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
                 case 2 ->
-                        JOptionPane.showMessageDialog(this, "Error al actualizar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "<< Error al actualizar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder modificar un proveedor", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Codigo no introducido para modificar proveedor >>", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_modificarBotonActionPerformed
@@ -386,21 +386,21 @@ public class GestionProveedores extends javax.swing.JFrame {
     private void eliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBotonActionPerformed
         ProveedoresEntity p = new ProveedoresEntity();
         if (!codigoProv.getText().equals("")) {
-            int opcion = JOptionPane.showConfirmDialog(this, "¿Estas seguro de que quieres eliminar el proveedor?", "Confirmacion borrado", JOptionPane.YES_NO_OPTION);
+            int opcion = JOptionPane.showConfirmDialog(this, "<< ¿Estas seguro de eliminar? >>", "Confirmacion de borrado", JOptionPane.YES_NO_OPTION);
             if (opcion == 0) {
                 p.setCodigo(codigoProv.getText());
                 switch (operaciones.eliminarProveedor(p)) {
-                    case 0 -> JOptionPane.showMessageDialog(this, "Se ha eliminado el proveedor correctamente");
+                    case 0 -> JOptionPane.showMessageDialog(this, "<< Proveedor eliminado correctamente");
                     case 1 ->
-                            JOptionPane.showMessageDialog(this, "No se ha encontrado un proveedor \ncorrespondiente al codigo intoducido", "Error codigo", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(this, "<< No se ha encontrado proveedor >>", "Codigo erroneo", JOptionPane.ERROR_MESSAGE);
                     case 2 ->
-                            JOptionPane.showMessageDialog(this, "Error al eliminar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Se ha cancelado la operacion", "Operacion cancelada", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "<< Se ha cancelado la accion >>", "Accion cancelada", JOptionPane.WARNING_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder eliminar un proveedor", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Falta el codigo del proveedor para eliminar >>", "Falta de codigo", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_eliminarBotonActionPerformed

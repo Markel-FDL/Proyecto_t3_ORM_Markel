@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class SuministrosPiezas extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<Object[]> ldatos;
+    static ArrayList<Object[]> listaPiezas;
 
     /**
      * Creates new form Gpp
@@ -150,7 +150,7 @@ public class SuministrosPiezas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPieActionPerformed
-        Object[] obj = ldatos.get(jComboBoxPie.getSelectedIndex());
+        Object[] obj = listaPiezas.get(jComboBoxPie.getSelectedIndex());
         nombrePie.setText(obj[1].toString());
         precioPie.setText(obj[2].toString());
         descripcion.setText(obj[3].toString());
@@ -164,11 +164,11 @@ public class SuministrosPiezas extends javax.swing.JFrame {
     }//GEN-LAST:event_numpiezasPieActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        ldatos = operaciones.listarDatosSuministrosPiezas();
-        String[] codigos = new String[ldatos.size()];
+        listaPiezas = operaciones.listarDatosSuministrosPiezas();
+        String[] codigos = new String[listaPiezas.size()];
 
-        for (int i = 0; i < ldatos.size(); i++) {
-            codigos[i] = ldatos.get(i)[0].toString();
+        for (int i = 0; i < listaPiezas.size(); i++) {
+            codigos[i] = listaPiezas.get(i)[0].toString();
         }
 
         DefaultComboBoxModel defaultComboBoxModel = new DefaultComboBoxModel(codigos);

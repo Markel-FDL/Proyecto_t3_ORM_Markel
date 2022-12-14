@@ -384,15 +384,15 @@ public class GestionPPP extends javax.swing.JFrame {
                 g.setProyectosCodigo(codigos[1]);
                 g.setProveedoresCodigo(codigos[2]);
                 switch (operaciones.anadirGestion(g)) {
-                    case 0 -> JOptionPane.showMessageDialog(this, "Se ha insertado el dato de gestion correctamente");
-                    case 1 -> JOptionPane.showMessageDialog(this, "Error de BD al insertar el dato de gestion", "Error insertar", JOptionPane.ERROR_MESSAGE);
-                    case 2 -> JOptionPane.showMessageDialog(this, "Ya existe una dato de gestion con los mismos codigos", "Codigos duplicados", JOptionPane.ERROR_MESSAGE);
+                    case 0 -> JOptionPane.showMessageDialog(this, "<< dato de gestion insertado correctamente >>");
+                    case 1 -> JOptionPane.showMessageDialog(this, "<< Error al insertar el dato de gestion >>", "Error de insercion", JOptionPane.ERROR_MESSAGE);
+                    case 2 -> JOptionPane.showMessageDialog(this, "<< Ya existe el codigo introducido >>", "Codigo existente", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "La cantidad introducidad debe de ser mayor que 0", "Numero no valido", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "<< La cantidad debe ser mayor de 0 >>", "Numero no valido", JOptionPane.WARNING_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se debe introducir un numero como cantidad", "Cantidad incorrecta", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Inserta cantidad >>", "Cantidad erronea", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_anadirBotonActionPerformed
 
@@ -410,17 +410,17 @@ public class GestionPPP extends javax.swing.JFrame {
                 codigos[1] = comboProyecto.getSelectedItem().toString();
                 codigos[2] = comboProveedor.getSelectedItem().toString();
                 switch (operaciones.actualizarGestion(codigos, cant)) {
-                    case 0 -> JOptionPane.showMessageDialog(this, "Se ha eliminado la dato de gestion  correctamente");
+                    case 0 -> JOptionPane.showMessageDialog(this, "<< Eliminado el dato correctamente >>");
                     case 1 ->
-                            JOptionPane.showMessageDialog(this, "No se ha encontrado una dato de gestion \ncorrespondiente a los codigos intoducido", "Error codigo", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(this, "<< No existe nada sobre el codigo intoducido >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
                     case 2 ->
-                            JOptionPane.showMessageDialog(this, "Error al eliminar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "La cantidad introducidad debe de ser mayor que 0", "Numero no valido", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "<< La cantidad debe ser mayor de 0 >>", "Numero no valido", JOptionPane.WARNING_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se debe introducir un numero como cantidad", "Cantidad incorrecta", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Inserta cantidad >>", "Cantidad erronea", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_modificarBotonActionPerformed
 
@@ -430,11 +430,11 @@ public class GestionPPP extends javax.swing.JFrame {
         codigos[1] = comboProyecto.getSelectedItem().toString();
         codigos[2] = comboProveedor.getSelectedItem().toString();
         switch (operaciones.eliminarGestion(codigos)) {
-            case 0 -> JOptionPane.showMessageDialog(this, "Se ha eliminado la dato de gestion  correctamente");
+            case 0 -> JOptionPane.showMessageDialog(this, "<< Eliminado el dato correctamente >>");
             case 1 ->
-                    JOptionPane.showMessageDialog(this, "No se ha encontrado una dato de gestion \ncorrespondiente al codigo intoducido", "Error codigo", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "<< No existe nada sobre el codigo intoducido >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
             case 2 ->
-                    JOptionPane.showMessageDialog(this, "Error al eliminar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_eliminarBotonActionPerformed

@@ -330,12 +330,12 @@ public class GestionProyectos extends javax.swing.JFrame {
             p.setNombre(nombreProy.getText());
             p.setCiudad(ciudadProy.getText());
             switch (operaciones.anadirProyecto(p)) {
-                case 0 -> JOptionPane.showMessageDialog(this, "Se ha insertado el nuevo proveedor correctamente");
-                case 1 -> JOptionPane.showMessageDialog(this, "Error de BD al insertar proveedor", "Error insertar", JOptionPane.ERROR_MESSAGE);
-                case 2 -> JOptionPane.showMessageDialog(this, "Ya existe una proveedor con el mismo codigo", "Codigo duplicado", JOptionPane.ERROR_MESSAGE);
+                case 0 -> JOptionPane.showMessageDialog(this, "<< Se ha insertado el nuevo proveedor correctamente >>");
+                case 1 -> JOptionPane.showMessageDialog(this, "<< Error al insertar proveedor >>", "Error de insercion", JOptionPane.ERROR_MESSAGE);
+                case 2 -> JOptionPane.showMessageDialog(this, "<< Proveedor existente con ese codigo >>", "Codigo existente", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se deben rellenar todos los campos \npara poder realizar la insercion", "Parametros faltantes", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Faltan datos para insertar >>", "Faltan datos", JOptionPane.ERROR_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_insertarBotonActionPerformed
@@ -347,14 +347,14 @@ public class GestionProyectos extends javax.swing.JFrame {
             p.setNombre(nombreProy.getText());
             p.setCiudad(ciudadProy.getText());
             switch (operaciones.actualizarProyecto(p)) {
-                case 0 -> JOptionPane.showMessageDialog(this, "Se ha actualizado el proyecto correctamente");
+                case 0 -> JOptionPane.showMessageDialog(this, "<< Actualizado correctamente >>");
                 case 1 ->
-                        JOptionPane.showMessageDialog(this, "No se ha encontrado una proveedor \ncorrespondiente al codigo intoducido", "Error codigo", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "<< No se ha encontrado proveedor >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
                 case 2 ->
-                        JOptionPane.showMessageDialog(this, "Error al actualizar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "<< Error al actualizar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder modificar un proyecto", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Introduce un codigo para modificar un proyecto >>", "Falta de codigo", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_modificarBotonActionPerformed
@@ -366,22 +366,22 @@ public class GestionProyectos extends javax.swing.JFrame {
     private void eliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBotonActionPerformed
         ProyectosEntity p = new ProyectosEntity();
         if (!codProy.getText().equals("")) {
-            int opcion = JOptionPane.showConfirmDialog(this, "¿Estas seguro de que quieres eliminar el proyecto?", "Confirmacion borrado", JOptionPane.YES_NO_OPTION);
+            int opcion = JOptionPane.showConfirmDialog(this, "¿Estas seguro de eliminar el proyecto?", "Borrado", JOptionPane.YES_NO_OPTION);
             if (opcion == 0) {
                 p.setCodigo(codProy.getText());
                 switch (operaciones.eliminarProyecto(p)) {
-                    case 0 -> JOptionPane.showMessageDialog(this, "Se ha eliminado el proyecto correctamente");
+                    case 0 -> JOptionPane.showMessageDialog(this, "<< Se ha eliminado el proyecto correctamente >>");
                     case 1 ->
-                            JOptionPane.showMessageDialog(this, "No se ha encontrado un proyecto \ncorrespondiente al codigo intoducido", "Error codigo", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(this, "<< No hay proyecto con el codigo intoducido", "Error de codigo", JOptionPane.ERROR_MESSAGE);
                     case 2 ->
-                            JOptionPane.showMessageDialog(this, "Error al eliminar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
-                JOptionPane.showMessageDialog(this, "Se ha cancelado la operacion", "Operacion cancelada", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "<< Se ha cancelado la accion >>", "Cancelacion de accion", JOptionPane.WARNING_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder eliminar un proyecto", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Falta codigo para eliminar un proyecto >>", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_eliminarBotonActionPerformed
