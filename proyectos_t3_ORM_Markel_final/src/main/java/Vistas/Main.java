@@ -7,7 +7,7 @@ package Vistas;
 
 /**
  *
- * @author iker
+ * @author 9fdam05
  */
 public class Main {
 

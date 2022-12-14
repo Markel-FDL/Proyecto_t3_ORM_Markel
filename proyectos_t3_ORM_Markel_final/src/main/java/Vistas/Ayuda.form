@@ -62,7 +62,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl tortor, scelerisque aliquet sem in, ultrices tempor turpis. &#xa;Fusce ac dui velit. Fusce vel vulputate ex. Aliquam aliquet purus eu metus feugiat ornare. &#xa;Proin ac justo eleifend, vulputate lectus vitae, tristique dolor. &#xa;Aenean ac mattis ligula, sed ultrices nisl. Vestibulum id justo a justo auctor pretium eget eget est. &#xa;Cras erat felis, tincidunt at elit id, congue interdum velit. Praesent elementum risus eros, et auctor est ultrices at. &#xa;Ut faucibus bibendum nibh, vitae pulvinar dui egestas porta. Sed aliquam ligula at est fermentum pretium. &#xa;Donec sed felis lorem. Vestibulum metus enim, pharetra quis condimentum nec, efficitur eget nisi. &#xa;Duis sollicitudin magna mi, ut molestie erat hendrerit iaculis."/>
+            <Property name="text" type="java.lang.String" value="Autor : Markel Fern&#xe1;ndez de Labastida&#xa;&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>

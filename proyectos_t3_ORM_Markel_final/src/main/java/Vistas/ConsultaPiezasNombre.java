@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author iker
+ * @author 9fdam05
  */
 public class ConsultaPiezasNombre extends javax.swing.JFrame {
 

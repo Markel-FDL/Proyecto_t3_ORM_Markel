@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
 /**
- * @author iker
+ * @author 9fdam05
  */
 public class TablaListadoGestion extends javax.swing.JFrame {
     Operaciones operaciones = new Operaciones();

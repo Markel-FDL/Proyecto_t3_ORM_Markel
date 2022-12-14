@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author iker
+ * @author 9fdam05
  */
 public class ConsultaProveedoresDireccion extends javax.swing.JFrame {
 

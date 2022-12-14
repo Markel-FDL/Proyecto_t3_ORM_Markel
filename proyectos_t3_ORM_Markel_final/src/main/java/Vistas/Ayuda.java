@@ -6,7 +6,7 @@ package Vistas;
 
 /**
  *
- * @author iker
+ * @author 9fdam05
  */
 public class Ayuda extends javax.swing.JFrame {
 
@@ -36,7 +36,7 @@ public class Ayuda extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl tortor, scelerisque aliquet sem in, ultrices tempor turpis. \nFusce ac dui velit. Fusce vel vulputate ex. Aliquam aliquet purus eu metus feugiat ornare. \nProin ac justo eleifend, vulputate lectus vitae, tristique dolor. \nAenean ac mattis ligula, sed ultrices nisl. Vestibulum id justo a justo auctor pretium eget eget est. \nCras erat felis, tincidunt at elit id, congue interdum velit. Praesent elementum risus eros, et auctor est ultrices at. \nUt faucibus bibendum nibh, vitae pulvinar dui egestas porta. Sed aliquam ligula at est fermentum pretium. \nDonec sed felis lorem. Vestibulum metus enim, pharetra quis condimentum nec, efficitur eget nisi. \nDuis sollicitudin magna mi, ut molestie erat hendrerit iaculis.");
+        jTextArea1.setText("Autor : Markel Fernández de Labastida\n\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

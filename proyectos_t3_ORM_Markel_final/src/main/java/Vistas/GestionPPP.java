@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * @author iker
+ * @author 9fdam05
  */
 public class GestionPPP extends javax.swing.JFrame {
 

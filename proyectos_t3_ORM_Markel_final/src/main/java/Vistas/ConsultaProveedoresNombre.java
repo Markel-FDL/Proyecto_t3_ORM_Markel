@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author iker
+ * @author 9fdam05
  */
 public class ConsultaProveedoresNombre extends javax.swing.JFrame {
 

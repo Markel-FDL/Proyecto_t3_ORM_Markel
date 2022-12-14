@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author iker
+ * @author 9fdam05
  */
 public class SuministrosProveedor extends javax.swing.JFrame {
 
