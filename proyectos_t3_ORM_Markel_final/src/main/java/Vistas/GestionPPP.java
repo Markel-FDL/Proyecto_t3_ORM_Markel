@@ -384,9 +384,12 @@ public class GestionPPP extends javax.swing.JFrame {
                 g.setProyectosCodigo(codigos[1]);
                 g.setProveedoresCodigo(codigos[2]);
                 switch (operaciones.anadirGestion(g)) {
-                    case 0 -> JOptionPane.showMessageDialog(this, "<< dato de gestion insertado correctamente >>");
-                    case 1 -> JOptionPane.showMessageDialog(this, "<< Error al insertar el dato de gestion >>", "Error de insercion", JOptionPane.ERROR_MESSAGE);
-                    case 2 -> JOptionPane.showMessageDialog(this, "<< Ya existe el codigo introducido >>", "Codigo existente", JOptionPane.ERROR_MESSAGE);
+                    case 0 :
+                        JOptionPane.showMessageDialog(this, "<< dato de gestion insertado correctamente >>");
+                    case 1 :
+                        JOptionPane.showMessageDialog(this, "<< Error al insertar el dato de gestion >>", "Error de insercion", JOptionPane.ERROR_MESSAGE);
+                    case 2 :
+                        JOptionPane.showMessageDialog(this, "<< Ya existe el codigo introducido >>", "Codigo existente", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "<< La cantidad debe ser mayor de 0 >>", "Numero no valido", JOptionPane.WARNING_MESSAGE);
@@ -410,11 +413,12 @@ public class GestionPPP extends javax.swing.JFrame {
                 codigos[1] = comboProyecto.getSelectedItem().toString();
                 codigos[2] = comboProveedor.getSelectedItem().toString();
                 switch (operaciones.actualizarGestion(codigos, cant)) {
-                    case 0 -> JOptionPane.showMessageDialog(this, "<< Eliminado el dato correctamente >>");
-                    case 1 ->
-                            JOptionPane.showMessageDialog(this, "<< No existe nada sobre el codigo intoducido >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
-                    case 2 ->
-                            JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
+                    case 0 :
+                        JOptionPane.showMessageDialog(this, "<< Eliminado el dato correctamente >>");
+                    case 1 :
+                        JOptionPane.showMessageDialog(this, "<< No existe nada sobre el codigo intoducido >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
+                    case 2 :
+                        JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "<< La cantidad debe ser mayor de 0 >>", "Numero no valido", JOptionPane.WARNING_MESSAGE);
@@ -430,11 +434,12 @@ public class GestionPPP extends javax.swing.JFrame {
         codigos[1] = comboProyecto.getSelectedItem().toString();
         codigos[2] = comboProveedor.getSelectedItem().toString();
         switch (operaciones.eliminarGestion(codigos)) {
-            case 0 -> JOptionPane.showMessageDialog(this, "<< Eliminado el dato correctamente >>");
-            case 1 ->
-                    JOptionPane.showMessageDialog(this, "<< No existe nada sobre el codigo intoducido >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
-            case 2 ->
-                    JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
+            case 0 :
+                JOptionPane.showMessageDialog(this, "<< Eliminado el dato correctamente >>");
+            case 1 :
+                JOptionPane.showMessageDialog(this, "<< No existe nada sobre el codigo intoducido >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
+            case 2 :
+                JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_eliminarBotonActionPerformed

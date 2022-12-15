@@ -113,10 +113,10 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
                 tablaResultados.setModel(model);
 
             } else {
-                JOptionPane.showMessageDialog(this, "No se ha encontrado ningun codigo\n que coincida con la busqueda", "No hay datos", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "<< No se ha encontrado nada >>", "No hay datos", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Debes de introducir un nombre para poder filtrar piezas", "Operacion cancelada", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Falta el nombre para poder filtrar >>", "Filtrado cancelada", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_buscarBotonActionPerformed
 

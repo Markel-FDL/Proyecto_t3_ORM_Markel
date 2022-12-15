@@ -374,12 +374,15 @@ public class GestionPiezas extends javax.swing.JFrame {
             p.setDescripcion(descPieza.getText());
             p.setPrecio(precio);
             switch (operaciones.anadirPieza(p)) {
-                case 0 -> JOptionPane.showMessageDialog(this, "Se ha insertado la nueva pieza correctamente");
-                case 1 -> JOptionPane.showMessageDialog(this, "Error de BD al insertar pieza", "Error insertar", JOptionPane.ERROR_MESSAGE);
-                case 2 -> JOptionPane.showMessageDialog(this, "Ya existe una pieza con el mismo codigo", "Codigo duplicado", JOptionPane.ERROR_MESSAGE);
+                case 0 :
+                    JOptionPane.showMessageDialog(this, "<< Se ha insertado correctamente >>");
+                case 1 :
+                    JOptionPane.showMessageDialog(this, "<< Error al insertar pieza >>", "Error de insercion", JOptionPane.ERROR_MESSAGE);
+                case 2 :
+                    JOptionPane.showMessageDialog(this, "<< Ya existe una pieza con ese codigo >>", "Codigo existente", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Hay valores vacios o incorrectos", "Parametros faltantes", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Hay campos vacios >>", "Parametros vacios", JOptionPane.ERROR_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_insertarBotonActionPerformed
@@ -392,15 +395,16 @@ public class GestionPiezas extends javax.swing.JFrame {
             p.setPrecio((Double) precioPie.getValue());
             p.setDescripcion(descPieza.getText());
             switch (operaciones.actualizarPieza(p)) {
-                case 0 -> JOptionPane.showMessageDialog(this, "Se ha actualizado la pieza correctamente");
-                case 1 ->
-                        JOptionPane.showMessageDialog(this, "No se ha encontrado una pieza \ncorrespondiente al codigo intoducido", "Error codigo", JOptionPane.ERROR_MESSAGE);
-                case 2 ->
-                        JOptionPane.showMessageDialog(this, "Error al actualizar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
+                case 0 :
+                    JOptionPane.showMessageDialog(this, "<< Se ha actualizado correctamente >>");
+                case 1 :
+                    JOptionPane.showMessageDialog(this, "<< No se ha encontrado nada >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
+                case 2 :
+                    JOptionPane.showMessageDialog(this, "<< Error al actualizar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
             }
 
         } else {
-            JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder modificar una pieza", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Se debe de introducir un codigo para modificar >>", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_modificarBotonActionPerformed
@@ -412,22 +416,23 @@ public class GestionPiezas extends javax.swing.JFrame {
     private void eliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBotonActionPerformed
         PiezasEntity p = new PiezasEntity();
         if (!codigoPie.getText().equals("")) {
-            int opcion = JOptionPane.showConfirmDialog(this, "¿Estas seguro de que quieres eliminar la pieza?", "Confirmacion borrado", JOptionPane.YES_NO_OPTION);
+            int opcion = JOptionPane.showConfirmDialog(this, "<< ¿Estas seguro de eliminar? >>", "Accion borrado", JOptionPane.YES_NO_OPTION);
             if (opcion == 0) {
                 p.setCodigo(codigoPie.getText());
                 switch (operaciones.eliminarPieza(p)) {
-                    case 0 -> JOptionPane.showMessageDialog(this, "Se ha eliminado la pieza correctamente");
-                    case 1 ->
-                            JOptionPane.showMessageDialog(this, "No se ha encontrado una pieza \ncorrespondiente al codigo intoducido", "Error codigo", JOptionPane.ERROR_MESSAGE);
-                    case 2 ->
-                            JOptionPane.showMessageDialog(this, "Error al eliminar en la BD", "Error BD", JOptionPane.ERROR_MESSAGE);
+                    case 0 :
+                        JOptionPane.showMessageDialog(this, "<< Se ha eliminado correctamente >>");
+                    case 1 :
+                        JOptionPane.showMessageDialog(this, "<< No se ha encontrado nada >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
+                    case 2 :
+                        JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
                 }
 
             } else {
-                JOptionPane.showMessageDialog(this, "Se ha cancelado la operacion", "Operacion cancelada", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "<< Se ha cancelado la accion >>", "Accion cancelada", JOptionPane.WARNING_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Se debe de introducir un codigo\n para poder eliminar una pieza", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "<< Falta el codigo para eliminar >>", "Codigo inexistente", JOptionPane.WARNING_MESSAGE);
         }
         limpiarDatos();
     }//GEN-LAST:event_eliminarBotonActionPerformed

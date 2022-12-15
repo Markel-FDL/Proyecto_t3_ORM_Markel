@@ -348,9 +348,12 @@ public class GestionProveedores extends javax.swing.JFrame {
             p.setApellidos(apellidoProv.getText());
             p.setDireccion(direccionProv.getText());
             switch (operaciones.anadirProveedor(p)) {
-                case 0 -> JOptionPane.showMessageDialog(this, "<< Proveedor correctamente insertado >>");
-                case 1 -> JOptionPane.showMessageDialog(this, "<< Error al insertar proveedor >>", "Error al insertar", JOptionPane.ERROR_MESSAGE);
-                case 2 -> JOptionPane.showMessageDialog(this, "<< El codigo ya existe >>", "Codigo existente", JOptionPane.ERROR_MESSAGE);
+                case 0 :
+                    JOptionPane.showMessageDialog(this, "<< Proveedor correctamente insertado >>");
+                case 1 :
+                    JOptionPane.showMessageDialog(this, "<< Error al insertar proveedor >>", "Error al insertar", JOptionPane.ERROR_MESSAGE);
+                case 2 :
+                    JOptionPane.showMessageDialog(this, "<< El codigo ya existe >>", "Codigo existente", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(this, "<< Faltan campos por rellenar para realizar la insercion >>", "Parametros vacion", JOptionPane.ERROR_MESSAGE);
@@ -366,11 +369,12 @@ public class GestionProveedores extends javax.swing.JFrame {
             p.setApellidos(apellidoProv.getText());
             p.setDireccion(direccionProv.getText());
             switch (operaciones.actualizarProveedor(p)) {
-                case 0 -> JOptionPane.showMessageDialog(this, "<< Proveedor actualizado correctamente >>");
-                case 1 ->
-                        JOptionPane.showMessageDialog(this, "<< No se ha encontrado proveedor >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
-                case 2 ->
-                        JOptionPane.showMessageDialog(this, "<< Error al actualizar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
+                case 0 :
+                    JOptionPane.showMessageDialog(this, "<< Proveedor actualizado correctamente >>");
+                case 1 :
+                    JOptionPane.showMessageDialog(this, "<< No se ha encontrado proveedor >>", "Error de codigo", JOptionPane.ERROR_MESSAGE);
+                case 2 :
+                    JOptionPane.showMessageDialog(this, "<< Error al actualizar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(this, "<< Codigo no introducido para modificar proveedor >>", "Codigo vacio", JOptionPane.WARNING_MESSAGE);
@@ -390,11 +394,12 @@ public class GestionProveedores extends javax.swing.JFrame {
             if (opcion == 0) {
                 p.setCodigo(codigoProv.getText());
                 switch (operaciones.eliminarProveedor(p)) {
-                    case 0 -> JOptionPane.showMessageDialog(this, "<< Proveedor eliminado correctamente");
-                    case 1 ->
-                            JOptionPane.showMessageDialog(this, "<< No se ha encontrado proveedor >>", "Codigo erroneo", JOptionPane.ERROR_MESSAGE);
-                    case 2 ->
-                            JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
+                    case 0 :
+                        JOptionPane.showMessageDialog(this, "<< Proveedor eliminado correctamente");
+                    case 1 :
+                        JOptionPane.showMessageDialog(this, "<< No se ha encontrado proveedor >>", "Codigo erroneo", JOptionPane.ERROR_MESSAGE);
+                    case 2 :
+                        JOptionPane.showMessageDialog(this, "<< Error al eliminar >>", "Error de BD", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "<< Se ha cancelado la accion >>", "Accion cancelada", JOptionPane.WARNING_MESSAGE);

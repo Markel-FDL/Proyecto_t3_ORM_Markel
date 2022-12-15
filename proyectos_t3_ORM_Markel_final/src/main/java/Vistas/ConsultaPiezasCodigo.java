@@ -139,10 +139,10 @@ public class ConsultaPiezasCodigo extends javax.swing.JFrame {
                 comboCodigos.setModel(modelo);
                 textoCodigo.setText("");
             } else {
-                JOptionPane.showMessageDialog(this, "No se ha encontrado ningun codigo\n que coincida con la busqueda", "No hay datos", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "<< No se ha encontrado nada >>", "No hay datos", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Debes de introducir un codigo para poder filtrar piezas", "Operacion cancelada", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Falta el codigo para poder filtrar >>", "Filtrado cancelada", JOptionPane.WARNING_MESSAGE);
         }
 
 
