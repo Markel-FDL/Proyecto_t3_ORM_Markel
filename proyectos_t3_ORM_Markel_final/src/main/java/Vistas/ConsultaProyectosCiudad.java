@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class ConsultaProyectosCiudad extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<ProyectosEntity> lproyectos;
-    static final String[] col = new String[]{"Codigo", "Nombre", "Ciudad"};
+    static ArrayList<ProyectosEntity> listaProyectos;
+    static final String[] columna = new String[]{"Codigo", "Nombre", "Ciudad"};
 
     /**
      * Creates new form ConsultaProveedoresNombre
@@ -102,10 +102,10 @@ public class ConsultaProyectosCiudad extends javax.swing.JFrame {
         if (!textoBusqueda.getText().trim().equals("")) {
             ArrayList<ProyectosEntity> temp = operaciones.listarProyectosFiltro("ciudad", textoBusqueda.getText());
             if (temp.size() > 0) {
-                lproyectos = temp;
+                listaProyectos = temp;
 
-                DefaultTableModel model = new DefaultTableModel(col,0);
-                for (ProyectosEntity proyectos : lproyectos) {
+                DefaultTableModel model = new DefaultTableModel(columna,0);
+                for (ProyectosEntity proyectos : listaProyectos) {
                     String[] datos = new String[]{proyectos.getCodigo(), proyectos.getNombre(), proyectos.getCiudad()};
                     model.addRow(datos);
                 }

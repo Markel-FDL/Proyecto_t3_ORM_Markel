@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class ConsultaProveedoresDireccion extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<ProveedoresEntity> lproveedores;
-    static final String[] col = new String[]{"Codigo", "Nombre", "Apellidos", "Direccion"};
+    static ArrayList<ProveedoresEntity> listaProveedores;
+    static final String[] columna = new String[]{"Codigo", "Nombre", "Apellidos", "Direccion"};
 
     /**
      * Creates new form ConsultaProveedoresNombre
@@ -102,10 +102,10 @@ public class ConsultaProveedoresDireccion extends javax.swing.JFrame {
         if (!textoBusqueda.getText().trim().equals("")) {
             ArrayList<ProveedoresEntity> temp = operaciones.listarProveedorFiltro("direccion", textoBusqueda.getText());
             if (temp.size() > 0) {
-                lproveedores = temp;
+                listaProveedores = temp;
 
-                DefaultTableModel model = new DefaultTableModel(col,0);
-                for (ProveedoresEntity lproveedor : lproveedores) {
+                DefaultTableModel model = new DefaultTableModel(columna,0);
+                for (ProveedoresEntity lproveedor : listaProveedores) {
                     String[] datos = new String[]{lproveedor.getCodigo(), lproveedor.getNombre(), lproveedor.getApellidos(), lproveedor.getDireccion()};
                     model.addRow(datos);
                 }

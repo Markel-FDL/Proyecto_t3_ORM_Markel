@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ConsultaPiezasNombre extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<PiezasEntity> lpiezas;
+    static ArrayList<PiezasEntity> listaPiezas;
     static final String[] col = new String[]{"Codigo", "Nombre", "Precio", "Descripcion"};
 
     /**
@@ -103,10 +103,10 @@ public class ConsultaPiezasNombre extends javax.swing.JFrame {
         if (!textoBusqueda.getText().trim().equals("")) {
             ArrayList<PiezasEntity> temp = operaciones.listarPiezasFiltro("nombre", textoBusqueda.getText());
             if (temp.size() > 0) {
-                lpiezas = temp;
+                listaPiezas = temp;
 
                 DefaultTableModel model = new DefaultTableModel(col,0);
-                for (PiezasEntity lpieza : lpiezas) {
+                for (PiezasEntity lpieza : listaPiezas) {
                     String[] datos = new String[]{lpieza.getCodigo(), lpieza.getNombre(), String.valueOf(lpieza.getPrecio()), lpieza.getDescripcion()};
                     model.addRow(datos);
                 }

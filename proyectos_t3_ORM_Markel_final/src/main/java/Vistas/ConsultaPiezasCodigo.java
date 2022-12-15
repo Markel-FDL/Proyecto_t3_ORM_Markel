@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class ConsultaPiezasCodigo extends javax.swing.JFrame {
 
     static Operaciones operaciones = new Operaciones();
-    static ArrayList<PiezasEntity> lpiezas;
+    static ArrayList<PiezasEntity> listaPiezas;
 
-    static String[] codigos;
+    static String[] codigo;
 
     /**
      * Creates new form ConsultaPiezasCodigo
@@ -37,7 +37,7 @@ public class ConsultaPiezasCodigo extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        comboCodigos = new javax.swing.JComboBox<>();
+        combocodigo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         textoCodigo = new javax.swing.JTextField();
@@ -47,10 +47,10 @@ public class ConsultaPiezasCodigo extends javax.swing.JFrame {
 
         jLabel1.setText("Codigo: ");
 
-        comboCodigos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Realiza busqueda--" }));
-        comboCodigos.addActionListener(new java.awt.event.ActionListener() {
+        combocodigo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Realiza busqueda--" }));
+        combocodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboCodigosActionPerformed(evt);
+                combocodigoActionPerformed(evt);
             }
         });
 
@@ -89,7 +89,7 @@ public class ConsultaPiezasCodigo extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(comboCodigos, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(combocodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
@@ -101,7 +101,7 @@ public class ConsultaPiezasCodigo extends javax.swing.JFrame {
                     .addComponent(textoCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buscarBoton))
                 .addGap(18, 18, 18)
-                .addComponent(comboCodigos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(combocodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -114,29 +114,29 @@ public class ConsultaPiezasCodigo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoCodigoActionPerformed
 
-    private void comboCodigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCodigosActionPerformed
-        if (!comboCodigos.getModel().getSelectedItem().toString().equals("--Realiza busqueda--")) {
+    private void combocodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combocodigoActionPerformed
+        if (!combocodigo.getModel().getSelectedItem().toString().equals("--Realiza busqueda--")) {
             PiezasEntity p = new PiezasEntity();
-            p = lpiezas.get(comboCodigos.getSelectedIndex());
+            p = listaPiezas.get(combocodigo.getSelectedIndex());
             jTextArea1.setText("Nombre: " + p.getNombre() + "\n" +
                     "\n" +
                     "Precio: " + p.getPrecio() + "\n" +
                     "\n" +
                     "Descripcion:  " + p.getDescripcion() + "\n");
         }
-    }//GEN-LAST:event_comboCodigosActionPerformed
+    }//GEN-LAST:event_combocodigoActionPerformed
 
     private void buscarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBotonActionPerformed
         if (!textoCodigo.getText().trim().equals("")) {
             ArrayList<PiezasEntity> temp = operaciones.listarPiezasFiltro("codigo", textoCodigo.getText());
             if (temp.size() > 0) {
-                lpiezas = temp;
-                codigos = new String[lpiezas.size()];
-                for (int i = 0; i < lpiezas.size(); i++) {
-                    codigos[i] = lpiezas.get(i).getCodigo();
+                listaPiezas = temp;
+                codigo = new String[listaPiezas.size()];
+                for (int i = 0; i < listaPiezas.size(); i++) {
+                    codigo[i] = listaPiezas.get(i).getCodigo();
                 }
-                DefaultComboBoxModel modelo = new DefaultComboBoxModel(codigos);
-                comboCodigos.setModel(modelo);
+                DefaultComboBoxModel modelo = new DefaultComboBoxModel(codigo);
+                combocodigo.setModel(modelo);
                 textoCodigo.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "<< No se ha encontrado nada >>", "No hay datos", JOptionPane.ERROR_MESSAGE);
@@ -188,7 +188,7 @@ public class ConsultaPiezasCodigo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscarBoton;
-    private javax.swing.JComboBox<String> comboCodigos;
+    private javax.swing.JComboBox<String> combocodigo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;

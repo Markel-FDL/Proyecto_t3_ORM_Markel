@@ -32,7 +32,7 @@ public class Ayuda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Ayuda programa");
+        jLabel1.setText("Ayuda");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
